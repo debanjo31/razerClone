@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.school-bg{
+  background-image: url('../public/img/homepage1.jpg');
+}
+
+
+.razerBlade-bg{
+  background-image: url('../public/img/homepage2.jpg');
+}
+
+
+.razerBlackWidow-bg{
+  background-image: url('../public/img/homepage3.jpg');
+}
+
+.razerCobra-bg{
+  background-image: url('../public/img/homepage4.jpg');
+}
+
+.razerMecury-bg{
+  background-image: url('../public/img/homepage5.jpg');
+}
+
+.razerXanthus-bg{
+  background-image: url('../public/img/homepage6.webp');
+}
+
+.razerHonkai-bg{
+  background-image: url('../public/img/homepage7.jpg');
+}
+
+
+.razerEdge-bg{
+  background-image: url('../public/img/homepage8.jpg');
+}
+
+
+@media screen and (min-width : 768px) {
+ 
+.school-bg{
+  background-image: url('../public/img/homepageDesktop1.webp');
+}
+
+
+.razerBlade-bg{
+  background-image: url('../public/img/homepageDesktop2.webp');
+}
+
+
+.razerBlackWidow-bg{
+  background-image: url('../public/img/homepageDesktop3.webp');
+}
+
+.razerCobra-bg{
+  background-image: url('../public/img/homepageDesktop4.webp');
+}
+
+.razerMecury-bg{
+  background-image: url('../public/img/homepageDesktop5.webp');
+}
+
+.razerXanthus-bg{
+  background-image: url('../public/img/homepageDesktop6.webp');
+}
+
+.razerHonkai-bg{
+  background-image: url('../public/img/homepageDesktop8.webp');
+}
+
+
+.razerEdge-bg{
+  background-image: url('../public/img/homepageDesktop9.webp');
+}
+ 
+}
