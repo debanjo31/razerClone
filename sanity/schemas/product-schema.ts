@@ -33,6 +33,12 @@ const product = {
       options: { source: 'name' },
     },
     {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Set true/false if this product should be featured',
+    },
+    {
       name: 'type',
       title: 'Product Type',
       type: 'string',
@@ -104,19 +110,86 @@ const product = {
       validation: (Rule: { required: () => any }) => Rule.required(),
     },
     {
-      name: 'techSpecification',
-      type: 'object',
-      title: 'Tech Specification',
-      fields: [
+      name: 'videos',
+      title: 'Videos',
+      type: 'array',
+      of: [
         {
-          name: 'col1',
           type: 'string',
-          title: 'Column 1',
         },
+      ],
+    },
+    {
+      name: 'features',
+      type: 'array',
+      title: 'Features',
+      of: [
         {
-          name: 'col2',
-          type: 'string',
-          title: 'Column 1',
+          type: 'object',
+          fields: [
+            {
+              name: 'pic',
+              type: 'image',
+              title: 'Feature Pic',
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alt',
+                  type: 'string',
+                },
+              ],
+            },
+            {
+              name: 'title',
+              type: 'string',
+              title: 'Feature Title',
+            },
+            {
+              name: 'description',
+              type: 'string',
+              title: 'Feature Description',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'brands',
+      type: 'array',
+      title: 'Brands',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'logo',
+              type: 'image',
+              title: 'Brand Logo',
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alt',
+                  type: 'string',
+                },
+              ],
+            },
+            {
+              name: 'name',
+              type: 'string',
+              title: 'Brand Name',
+            },
+            {
+              name: 'words',
+              type: 'string',
+              title: 'Brand Recommendation',
+            },
+          ],
         },
       ],
     },
