@@ -148,6 +148,11 @@ const product = {
               title: 'Feature Title',
             },
             {
+              name: 'subtitle',
+              type: 'string',
+              title: 'Feature Sub Title',
+            },
+            {
               name: 'description',
               type: 'string',
               title: 'Feature Description',
