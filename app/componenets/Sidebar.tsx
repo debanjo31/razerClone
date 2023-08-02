@@ -1,8 +1,13 @@
 import React from "react";
 
-const Sidebar = (setOpenSideBar: (arg0: boolean) => void, openSideBar: any) => {
-  return <aside id="logo-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform  translate-x-0" aria-label="Sidebar">
-  <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+const Sidebar = () => {
+  return (
+    <aside
+      id='logo-sidebar'
+      className='fixed top-0 left-0 z-40 w-64 h-screen transition-transform  translate-x-0'
+      aria-label='Sidebar'
+    >
+      {/* <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
   <p className="text-lg" onClick={() => setOpenSideBar(!openSideBar)}>X</p>
      <a href="https://flowbite.com/" className="flex items-center pl-2.5 mb-5">
         <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
@@ -71,8 +76,9 @@ const Sidebar = (setOpenSideBar: (arg0: boolean) => void, openSideBar: any) => {
            </a>
         </li>
      </ul>
-  </div>
-</aside>;
+  </div> */}
+    </aside>
+  );
 };
 
 export default Sidebar;
