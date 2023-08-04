@@ -1,13 +1,16 @@
 export interface Product {
-    _id: string;
-    name: string;
-    type: 'laptop' | 'desktop' | 'monitor' | 'mouse' | 'mouse_mat' | 'keyboard' | 'headset' | 'speaker' | 'chair' | 'software';
-    brand: string;
-    price: number;
-    createdAt: Date;
-    slug: string;
-    description: string;
-    image: string;
-    url: string;
-    // Add more fields specific to each product type, if needed
-  }
+  _id: string;
+  name: string;
+  type: string;
+  featured: boolean;
+  description: string;
+  excerpt: string;
+  price: number;
+  createdAt: Date;
+  slug: string;
+  image: string;
+  images: Array<any>;
+  features: Array<any>;
+
+  // Add more fields specific to each product type, if needed
+}
