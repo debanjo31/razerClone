@@ -24,6 +24,10 @@ export default function Home() {
   );
   return (
     <main className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
+      <p className='text-center p-2 bg-[#555555] text-white text-md md:text-lg'>
+        All orders over US$79 will enjoy free standard shipping to the United
+        State
+      </p>
       <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12'>
         <div className='w-5/6 text-center mx-auto'>
           <p className='text-[#44d62c] text-4xl mb-4 text-center'>
@@ -40,15 +44,12 @@ export default function Home() {
         </div>
       </section>
       <section className='w-full text-2xl py-12'>
-        <div>
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
           {filteredProducts.map((product: Product) => (
-            // <div
-            //   key={product._id}
-            //   className='mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'
-            // >
-            //   {product.name}
-            // </div>
-            <PcCard product={product} />
+            <PcCard
+              key={product._id}
+              product={product}
+            />
           ))}
         </div>
       </section>
