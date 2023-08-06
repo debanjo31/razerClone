@@ -17,18 +17,18 @@ const PcCard = ({ product }: PcCardProps) => {
   return (
     <Link
       href={'#'}
-      className='block mt-1 h-[75vh]'
+      className='block mt-1 md:h-[75vh]'
     >
       <div className='h-full max-w-md md:max-w-sm  rounded-md shadow bg-[#111111] border-b-2 border-[#44d62c]'>
         <Image
-          src={urlFor(product.images[0]).width(550).height(550).url()}
+          src={urlFor(product.images[0]).width(650).height(650).url()}
           alt={product.name}
-          height='550'
-          width='550'
+          height='650'
+          width='650'
           className='rounded-t-md transition-transform duration-300 hover:scale-105'
         />
         <div className='p-5'>
-          <h5 className='mb-2 text-xl md:text-2xl font-bold tracking-tight text-white'>
+          <h5 className='mb-2 text-2xl font-bold tracking-tight text-white'>
             {product.name.toUpperCase()}
           </h5>
 
