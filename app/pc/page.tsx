@@ -37,9 +37,9 @@ export default function Home() {
             From cutting-edge gaming and creator laptops to high-end components
             for your dream PC build, Razer systems are meticulously crafted to
             provide the ultimate performance for work and play. Supported by our
-            diverse collection of gamer accessories and PC peripherals, we’ve
-            got you covered when it comes to your unique gaming or office
-            desktop needs.
+            diverse collection of gamer accessories and PC peripherals,
+            we&apos;ve got you covered when it comes to your unique gaming or
+            office desktop needs.
           </p>
         </div>
       </section>
@@ -71,8 +71,8 @@ export default function Home() {
           high-fidelity webcams to professional-grade microphones, deliver the
           best possible streaming experience with our range of content creation
           gear. Whether you're streaming from your gaming desktop or laptop,
-          we’ve got everything you need to create content that stands out from
-          the rest.
+          we&apos;ve got everything you need to create content that stands out
+          from the rest.
         </p>
       </div>
       <div className='bg-[#111111] text-[#999] software'>
