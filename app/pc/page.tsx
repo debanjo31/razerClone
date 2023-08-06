@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { getProducts } from '@/sanity/sanity-utils';
 import { Product } from '@/types/Product';
 import { useEffect, useState } from 'react';
@@ -20,7 +19,25 @@ export default function Home() {
 
   // Filter and map only laptop and desktop products
   const laptopFilteredProducts = products.filter(
-    (product) => product.type === 'laptop' || product.type === 'desktop'
+    (product) =>
+      product.type === 'laptop' ||
+      product.type === 'desktop' ||
+      product.type === 'monitor'
+  );
+  const periFilteredProducts = products.filter(
+    (product) =>
+      product.type === 'mouse' ||
+      product.type === 'mouse_mat' ||
+      product.type === 'keyboard'
+  );
+  const contentFilteredProducts = products.filter(
+    (product) =>
+      product.type === 'headset' ||
+      product.type === 'speaker' ||
+      product.type === 'chair'
+  );
+  const softwareFilteredProducts = products.filter(
+    (product) => product.type === 'software'
   );
   return (
     <main className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
@@ -45,15 +62,15 @@ export default function Home() {
       </section>
       <section className='w-full text-2xl py-12'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
-          {laptopFilteredProducts.map((product: Product) => (
-            <PcCard
-              key={product._id}
-              product={product}
-            />
-          ))}
+          {laptopFilteredProducts &&
+            laptopFilteredProducts.map((product: Product) => (
+              <PcCard
+                key={product._id}
+                product={product}
+              />
+            ))}
         </div>
       </section>
-
       <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
         <div className='w-5/6 text-center mx-auto'>
           <p className='text-[#44d62c] text-4xl lg:text-5xl mb-4 text-center'>
@@ -66,6 +83,17 @@ export default function Home() {
             industry-leading headsets and monitors, deck out your setup with our
             comprehensive selection of peripherals for gaming and work.
           </p>
+        </div>
+      </section>
+      <section className='w-full text-2xl py-12'>
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+          {periFilteredProducts &&
+            periFilteredProducts.map((product: Product) => (
+              <PcCard
+                key={product._id}
+                product={product}
+              />
+            ))}
         </div>
       </section>
       <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
@@ -83,6 +111,17 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <section className='w-full text-2xl py-12'>
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+          {contentFilteredProducts &&
+            contentFilteredProducts.map((product: Product) => (
+              <PcCard
+                key={product._id}
+                product={product}
+              />
+            ))}
+        </div>
+      </section>
       <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
         <div className='w-5/6 text-center mx-auto'>
           <p className='text-[#44d62c] text-4xl lg:text-5xl mb-4 text-center'>
@@ -98,14 +137,17 @@ export default function Home() {
           </p>
         </div>
       </section>
-      {laptopFilteredProducts.map((product: Product) => (
-        <div
-          key={product._id}
-          className='mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'
-        >
-          {product.name}
+      <section className='w-full text-2xl py-12'>
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+          {softwareFilteredProducts &&
+            softwareFilteredProducts.map((product: Product) => (
+              <PcCard
+                key={product._id}
+                product={product}
+              />
+            ))}
         </div>
-      ))}
+      </section>
     </main>
   );
 }

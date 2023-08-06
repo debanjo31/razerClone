@@ -33,9 +33,10 @@ const PcCard = ({ product }: PcCardProps) => {
           </h5>
 
           <p className='mb-3 font-normal text-[#888]'>
-            {product.excerpt.length > 25
-              ? product.excerpt.slice(0, 45) + '...'
-              : product.excerpt}
+            {product.excerpt &&
+              (product.excerpt.length > 25
+                ? product.excerpt.slice(0, 45) + '...'
+                : product.excerpt)}
           </p>
           <p className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#44d62c] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
             Check it out
