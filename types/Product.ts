@@ -11,6 +11,4 @@ export interface Product {
   image: string;
   images: Array<any>;
   features: Array<any>;
-
-  // Add more fields specific to each product type, if needed
 }
