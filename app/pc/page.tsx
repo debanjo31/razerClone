@@ -45,9 +45,9 @@ export default function Home() {
         All orders over US$79 will enjoy free standard shipping to the United
         State
       </p>
-      <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
+      <section className='bg-[#111111] text-[#999] laptop w-full text-xl md:text-2xl py-12 lg:py-16'>
         <div className='w-5/6 text-center mx-auto'>
-          <p className='text-[#44d62c] text-4xl lg:text-5xl mb-4 text-center'>
+          <p className='text-[#44d62c] text-2xl md:text-4xl lg:text-5xl mb-4 text-center'>
             LAPTOPS & DESKTOPS
           </p>
           <p className='section-text'>
@@ -60,7 +60,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className='w-full text-2xl py-12'>
+      <section className='w-full text-xl md:text-2xl py-12'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
           {laptopFilteredProducts &&
             laptopFilteredProducts.map((product: Product) => (
@@ -71,9 +71,9 @@ export default function Home() {
             ))}
         </div>
       </section>
-      <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
+      <section className='bg-[#111111] text-[#999] laptop w-full text-xl md:text-2xl py-12 lg:py-16'>
         <div className='w-5/6 text-center mx-auto'>
-          <p className='text-[#44d62c] text-4xl lg:text-5xl mb-4 text-center'>
+          <p className='text-[#44d62c] text-2xl md:text-4xl lg:text-5xl mb-4 text-center'>
             PC & LAPTOP PERIPHERALS
           </p>
           <p>
@@ -85,7 +85,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className='w-full text-2xl py-12'>
+      <section className='w-full text-xl md:text-2xl py-12'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
           {periFilteredProducts &&
             periFilteredProducts.map((product: Product) => (
@@ -96,9 +96,9 @@ export default function Home() {
             ))}
         </div>
       </section>
-      <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
+      <section className='bg-[#111111] text-[#999] laptop w-full text-xl md:text-2xl py-12 lg:py-16'>
         <div className='w-5/6 text-center mx-auto'>
-          <p className='text-[#44d62c] text-4xl lg:text-5xl mb-4 text-center'>
+          <p className='text-[#44d62c] text-2xl md:text-4xl lg:text-5xl mb-4 text-center'>
             CONTENT CREATION & STREAMING
           </p>
           <p>
@@ -122,9 +122,9 @@ export default function Home() {
             ))}
         </div>
       </section>
-      <section className='bg-[#111111] text-[#999] laptop w-full text-2xl py-12 lg:py-16'>
+      <section className='bg-[#111111] text-[#999] laptop w-full text-xl lg:text-2xl py-12 lg:py-16'>
         <div className='w-5/6 text-center mx-auto'>
-          <p className='text-[#44d62c] text-4xl lg:text-5xl mb-4 text-center'>
+          <p className='text-[#44d62c] text-2xl md:text-4xl lg:text-5xl mb-4 text-center'>
             SOFTWARE
           </p>
           <p>

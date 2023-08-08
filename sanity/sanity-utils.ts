@@ -14,23 +14,26 @@ export async function getProducts() {
           excerpt, 
         "slug": slug.current,
         "images": images[].asset._ref,
-          features[] ,  
-        
+          features[] ,          
       }`
   );
 }
 
-// export async function getProject(slug: string): Promise<Product> {
-//   return createClient(clientConfig).fetch(
-//     groq`*[_type == "project" && slug.current == $slug][0]{
-//       _id,
-//       _createdAt,
-//       name,
-//       "slug": slug.current,
-//       "image": image.asset->url,
-//       url,
-//       content
-//     }`,
-//     { slug }
-//   )
-// }
+export async function getProduct(slug: string) {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]{
+      _id,
+      name,
+       type,
+        price,
+        featured,
+        description,
+        excerpt, 
+      "slug": slug.current,
+      "images": images[].asset._ref,
+        features[] ,  
+      
+    }`,
+    { slug }
+  );
+}

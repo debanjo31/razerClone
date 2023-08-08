@@ -16,7 +16,7 @@ const PcCard = ({ product }: PcCardProps) => {
   }
   return (
     <Link
-      href={'#'}
+      href={`/pc/${product.slug}`}
       className='block mt-1 md:h-[75vh]'
     >
       <div className='h-full max-w-md md:max-w-sm  rounded-md shadow bg-[#111111] border-b-2 border-[#44d62c]'>
