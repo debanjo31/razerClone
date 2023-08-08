@@ -21,7 +21,7 @@ export async function getProducts() {
 
 export async function getProduct(slug: string) {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "project" && slug.current == $slug][0]{
+    groq`*[_type == "product" && slug.current == $slug][0]{
       _id,
       name,
        type,
