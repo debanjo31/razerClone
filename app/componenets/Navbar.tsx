@@ -139,49 +139,52 @@ const Navbar = () => {
           </div>
           <div className='flex flex-col px-8'>
             <Link
-              href={'/'}
+              href={'/store'}
               className='block py-4 mt-2 border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Store
             </Link>
             <Link
-              href={'/'}
+              href={'/pc'}
               className='block py-4  border-b-2 border-gray-500'
             >
               PC
             </Link>
             <Link
-              href={'/'}
+              href={'/console-gaming'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Console
             </Link>
             <Link
-              href={'/'}
+              href={'/mobile'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Mobile
             </Link>
             <Link
-              href={'/'}
+              href={'/lifestyle'}
               className='block py-4  border-b-2 border-gray-500'
             >
               Lifestyle
             </Link>
             <Link
-              href={'/'}
+              href={'/services'}
               className='block py-4  border-b-2 border-gray-500'
             >
               Services
             </Link>
             <Link
-              href={'/'}
+              href={'/community'}
               className='block py-4  border-b-2 border-gray-500'
             >
               Community
             </Link>
             <Link
-              href={'/'}
+              href={'/support'}
               className='block py-4  border-b-2 border-gray-500'
             >
               Support
