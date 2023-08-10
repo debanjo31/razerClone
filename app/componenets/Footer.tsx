@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { FaPlus} from "react-icons/fa";
 import SocialIcon from "./SocialIcon";
 const Footer = () => {
-  const [footerViw, setfooterViw] = useState("");
-  const [closeViw, setcloseViw] = useState(false);
+  const [activeTab, setActiveTab] = useState('');
+
+  const toggleTab = (tabName: string) => {
+    setActiveTab(activeTab === tabName ? '' : tabName);
+  };
 
   return (
     <footer className='bg-[rgb(17,17,17)] py-8 text-white text-sm lg:text-md '>
@@ -13,24 +16,24 @@ const Footer = () => {
           <div className='flex flex-col border-b-2 border-gray-500 md:border-none pb-4'>
             <div
               className='flex justify-between cursor-pointer'
-              onClick={() => setfooterViw('shop')}
+              onClick={() => toggleTab('shop')}
             >
               <p className='font-bold'>Shop</p>
-              {!closeViw ? (
+              {!activeTab.includes('shop') ? (
                 <FaPlus
                   className='block text-gray-200 md:hidden'
-                  onClick={() => setcloseViw(!closeViw)}
+                  onClick={() => toggleTab('shop')}
                 />
               ) : (
                 <p
-                  className='font-bold text-md md:text-lg '
-                  onClick={() => setfooterViw('')}
+                  className='font-bold text-md md:text-lg'
+                  onClick={() => toggleTab('')}
                 >
                   X
                 </p>
               )}
             </div>
-            {footerViw === 'shop' && (
+            {activeTab === 'shop' && (
               <div className='flex flex-col gap-2 py-4 md:hidden'>
                 <p>RazerStores</p>
                 <p>RazerCafe</p>
@@ -57,12 +60,24 @@ const Footer = () => {
           <div className='flex flex-col border-b-2 border-gray-500 md:border-none pb-4'>
             <div
               className='flex justify-between cursor-pointer'
-              onClick={() => setfooterViw('explore')}
+              onClick={() => toggleTab('explore')}
             >
               <p className='font-bold'>Explore</p>
-              <FaPlus className='block text-gray-200 md:hidden' />
-            </div>{' '}
-            {footerViw === 'explore' && (
+              {!activeTab.includes('explore') ? (
+                <FaPlus
+                  className='block text-gray-200 md:hidden'
+                  onClick={() => toggleTab('explore')}
+                />
+              ) : (
+                <p
+                  className='font-bold text-md md:text-lg'
+                  onClick={() => toggleTab('')}
+                >
+                  X
+                </p>
+              )}
+            </div>
+            {activeTab === 'explore' && (
               <div className='flex flex-col gap-2 py-4 md:hidden'>
                 <p>Technology</p>
                 <p>Chrome RGO</p>
@@ -83,12 +98,24 @@ const Footer = () => {
           <div className='flex flex-col border-b-2 border-gray-500 md:border-none pb-4'>
             <div
               className='flex justify-between cursor-pointer'
-              onClick={() => setfooterViw('support')}
+              onClick={() => toggleTab('support')}
             >
               <p className='font-bold'>Support</p>
-              <FaPlus className='block text-gray-200 md:hidden' />
+              {!activeTab.includes('support') ? (
+                <FaPlus
+                  className='block text-gray-200 md:hidden'
+                  onClick={() => toggleTab('support')}
+                />
+              ) : (
+                <p
+                  className='font-bold text-md md:text-lg'
+                  onClick={() => toggleTab('')}
+                >
+                  X
+                </p>
+              )}
             </div>
-            {footerViw === 'support' && (
+            {activeTab === 'support' && (
               <div className='flex flex-col gap-2 py-4 md:hidden'>
                 <p>Get Help</p>
                 <p>Registration & Warranty</p>
@@ -113,12 +140,24 @@ const Footer = () => {
           <div className='flex flex-col border-b-2 border-gray-500 md:border-none pb-4'>
             <div
               className='flex justify-between cursor-pointer'
-              onClick={() => setfooterViw('company')}
+              onClick={() => toggleTab('company')}
             >
               <p className='font-bold'>Company</p>
-              <FaPlus className='block text-gray-200 md:hidden' />
+              {!activeTab.includes('company') ? (
+                <FaPlus
+                  className='block text-gray-200 md:hidden'
+                  onClick={() => toggleTab('company')}
+                />
+              ) : (
+                <p
+                  className='font-bold text-md md:text-lg'
+                  onClick={() => toggleTab('')}
+                >
+                  X
+                </p>
+              )}
             </div>
-            {footerViw === 'company' && (
+            {activeTab === 'company' && (
               <div className='flex flex-col gap-2 py-4 md:hidden'>
                 <p>About Us</p>
                 <p>Careers</p>
