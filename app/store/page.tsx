@@ -39,7 +39,7 @@ export default function Home() {
         </p>
       </section>
       <section className='store'>
-        <div className="w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '">
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
           {products &&
             products.map((product: Product) => (
               <StoreCard
