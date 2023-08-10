@@ -137,7 +137,7 @@ const Navbar = () => {
               className='rounded-md bg-gray-800 w-full '
             />
           </div>
-          <div className='flex flex-col p-8'>
+          <div className='flex flex-col px-8'>
             <Link
               href={'/'}
               className='block py-4 mt-2 border-b-2 border-gray-500'
@@ -146,43 +146,43 @@ const Navbar = () => {
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               PC
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               Console
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               Mobile
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               Lifestyle
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               Services
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               Community
             </Link>
             <Link
               href={'/'}
-              className='block py-4 mt-2 border-b-2 border-gray-500'
+              className='block py-4  border-b-2 border-gray-500'
             >
               Support
             </Link>
