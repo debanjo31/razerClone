@@ -100,7 +100,7 @@ body {
 }
 
 .storeNav div{
-  flex-basis: 25%;
+  flex-basis: 120px;
   flex-shrink: 0;
   height: 100%;
 
