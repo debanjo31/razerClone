@@ -91,3 +91,17 @@ body {
     background-image: url('../public/img/homepageDesktop6.webp');
   }
 }
+
+.storeNav{
+  display: flex;
+  height: 96px;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.storeNav div{
+  flex-basis: 25%;
+  flex-shrink: 0;
+  height: 100%;
+
+}
