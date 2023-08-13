@@ -94,13 +94,13 @@ body {
 
 .storeNav{
   display: flex;
-  height: 96px;
+  height: 144px;
   justify-content: space-between;
   overflow-x: auto;
 }
 
 .storeNav div{
-  flex-basis: 120px;
+  flex-basis: 144px;
   flex-shrink: 0;
   height: 100%;
 

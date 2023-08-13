@@ -22,6 +22,10 @@ export default function Home() {
 
   return (
     <main className='mt-16 md:mt-[80px] z-10 bg-black'>
+      <p className='text-center p-2 bg-[#555555] text-white text-md md:text-lg'>
+        All orders over US$79 will enjoy free standard shipping to the United
+        State
+      </p>
       <StoreNav />
       <section className='content mb-4 w-full text-xl md:text-2xl py-12'>
         <div className='w-5/6 mx-auto'>

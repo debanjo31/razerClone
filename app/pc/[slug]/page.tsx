@@ -3,13 +3,21 @@
 import { Product } from '@/types/Product';
 import { useEffect, useState } from 'react';
 import { getProduct } from '@/sanity/sanity-utils';
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
+import imageUrlBuilder from '@sanity/image-url';
+import config from '@/sanity/config/client-config';
 type Props = {
   params: { slug: string };
 };
 
 const Page = ({ params }: Props) => {
   const [product, setProduct] = useState<Product | null>(null);
+  const builder = imageUrlBuilder(config);
+
+  function urlFor(source: string) {
+    return builder.image(source);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,9 +37,8 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
-      Page
-      <p>Product 1</p>
-      {product?.name}
+      <p>{product?.name}</p>
+      <section className='carousel'></section>
     </div>
   );
 };
