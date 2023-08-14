@@ -4,7 +4,6 @@ import { Product } from '@/types/Product';
 import { useEffect, useState } from 'react';
 import StoreCard from '../componenets/StoreCard';
 import StoreNav from '../componenets/StoreNav';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
@@ -38,7 +37,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className='store'>
+      <section className='store w-full'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
           <Splide
             options={{ rewind: true }}
