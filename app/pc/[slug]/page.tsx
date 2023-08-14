@@ -4,7 +4,6 @@ import { Product } from '@/types/Product';
 import { useEffect, useState } from 'react';
 import { getProduct } from '@/sanity/sanity-utils';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
 import imageUrlBuilder from '@sanity/image-url';
 import config from '@/sanity/config/client-config';
 type Props = {
