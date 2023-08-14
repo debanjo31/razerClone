@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const StoreNav = () => {
   return (
-    <section className='storeNav px-2 py-4 gap-4 lg:w-5/6 mx-auto'>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+    <section className='storeNav mt-2 gap-8 lg:w-5/6 mx-auto'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/laptop.png'
             alt='laptop'
@@ -13,10 +13,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Laptop</p>
+        <p className="text-center">Laptop</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/components.png'
             alt='laptop'
@@ -24,10 +24,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Componenets</p>
+        <p className="text-center">Componenets</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/mice.png'
             alt='laptop'
@@ -35,10 +35,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Mice</p>
+        <p className="text-center">Mice</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/keyboard.png'
             alt='laptop'
@@ -46,10 +46,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Keyboard</p>
+        <p className="text-center">Keyboard</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/audio.png'
             alt='laptop'
@@ -57,10 +57,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Audio</p>
+        <p className="text-center">Audio</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/content.png'
             alt='laptop'
@@ -68,10 +68,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Content Creation</p>
+        <p className="text-center">Content Creation</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/chairs.png'
             alt='laptop'
@@ -79,10 +79,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Chairs</p>
+        <p className="text-center">Chairs</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/console.png'
             alt='laptop'
@@ -90,10 +90,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Console</p>
+        <p className="text-center">Console</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/mobile.png'
             alt='laptop'
@@ -101,10 +101,10 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Mobile</p>
+        <p className="text-center">Mobile</p>
       </div>
-      <div className='flex flex-col h-36 w-36 relative '>
-        <div className='relative'>
+      <div className='flex flex-col h-24 w-24 relative '>
+        <div className='relative text-center'>
           <Image
             src='/img/gear.png'
             alt='laptop'
@@ -112,7 +112,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p>Gear</p>
+        <p className="text-center">Gear</p>
       </div>
     </section>
   );
