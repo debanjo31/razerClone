@@ -4,8 +4,7 @@ import { Product } from '@/types/Product';
 import { useEffect, useState } from 'react';
 import StoreCard from '../componenets/StoreCard';
 import StoreNav from '../componenets/StoreNav';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -19,7 +18,18 @@ export default function Home() {
         console.error(error);
       });
   }, []);
-
+  const [currentProduct, setcurrentProduct] = useState(0);
+  let currentProductId = 0;
+  const handleNext = () => {
+    currentProduct === products.length - 1
+      ? setcurrentProduct(0)
+      : setcurrentProduct(currentProduct + 1);
+  };
+  const handlePrev = () => {
+    currentProduct === 0
+      ? setcurrentProduct(products.length - 1)
+      : setcurrentProduct(currentProduct - 1);
+  };
   return (
     <main className='mt-16 md:mt-[80px] z-10 bg-black'>
       <p className='text-center p-2 bg-[#555555] text-white text-md md:text-lg'>
@@ -39,20 +49,25 @@ export default function Home() {
       </section>
       <section className='store w-full'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
-          <Splide
-            options={{ rewind: true }}
-            aria-label='React Splide Example'
-          >
+          <div className='flex'>
+            <FaChevronLeft
+              onClick={handlePrev}
+              className=' absolute left-0 bottom-2/4'
+            />
             {products &&
-              products.map((product: Product) => (
-                <SplideSlide>
-                  <StoreCard
-                    key={product._id}
-                    product={product}
-                  />
-                </SplideSlide>
+              products.map((product: Product, index) => (
+                <StoreCard
+                  key={product._id}
+                  product={product}
+                  currentProduct={currentProduct}
+                  currentProductId={index}
+                />
               ))}
-          </Splide>
+            <FaChevronRight
+              onClick={handleNext}
+              className=' absolute right-0 bottom-2/4'
+            />
+          </div>
         </div>
       </section>
     </main>
