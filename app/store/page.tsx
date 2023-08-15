@@ -52,7 +52,7 @@ export default function Home() {
           <div className='flex relative'>
             <FaChevronLeft
               onClick={handlePrev}
-              className=' absolute left-0 bottom-2/4 z-20'
+              className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-lg'
             />
             {products &&
               products.map((product: Product, index) => (
@@ -65,7 +65,7 @@ export default function Home() {
               ))}
             <FaChevronRight
               onClick={handleNext}
-              className=' absolute right-0 bottom-2/4 z-20'
+              className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-lg'
             />
           </div>
         </div>
