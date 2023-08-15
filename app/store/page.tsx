@@ -65,7 +65,7 @@ export default function Home() {
               ))}
             <FaChevronRight
               onClick={handleNext}
-              className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-lg'
+              className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
             />
           </div>
         </div>
