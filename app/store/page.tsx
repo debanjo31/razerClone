@@ -49,7 +49,7 @@ export default function Home() {
       </section>
       <section className='store w-full'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
-          <div className='flex'>
+          <div className='flex relative'>
             <FaChevronLeft
               onClick={handlePrev}
               className=' absolute left-0 bottom-2/4'
