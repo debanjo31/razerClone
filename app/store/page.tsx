@@ -51,8 +51,8 @@ export default function Home() {
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 mb-8'>
           <div className='flex relative'>
             <FaChevronLeft
-              onClick={handlePrev}
-              className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-lg'
+              onClick={handleNext}
+              className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-2xl'
             />
             {products &&
               products.map((product: Product, index) => (
@@ -64,7 +64,7 @@ export default function Home() {
                 />
               ))}
             <FaChevronRight
-              onClick={handleNext}
+              onClick={handlePrev}
               className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
             />
           </div>
