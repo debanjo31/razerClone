@@ -72,12 +72,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='buyFeatures pb-12 text-center'>
-        <p className='text-center text-[#44d62c] text-2xl md:text-4xl font-bold mb-4'>
+      <section className='buyFeatures pb-12 text-center mt-8'>
+        <p className='text-center text-[#44d62c] text-2xl md:text-4xl font-bold mb-8'>
           WHY BUY FROM RAZER.COM
         </p>
         <div className='flex flex-wrap justify-between gap-8 w-5/6 mx-auto'>
-          <div className='flex flex-col justify-center items-center gap-2 text-center'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
             <Image
               src='/img/dibs.svg'
               alt='feature'
@@ -91,7 +91,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='flex flex-col justify-center items-center gap-2 text-center'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
             <Image
               src='/img/gearArray.svg'
               alt='feature'
@@ -106,7 +106,7 @@ export default function Home() {
               products that can’t be matched anywhere else.
             </p>
           </div>
-          <div className='flex flex-col justify-center items-center gap-2 text-center'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
             <Image
               src='/img/gearSwag.svg'
               alt='feature'
@@ -119,7 +119,7 @@ export default function Home() {
               Razer.com.
             </p>
           </div>
-          <div className='flex flex-col justify-center items-center gap-2 text-center'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
             <Image
               src='/img/pay.svg'
               alt='feature'
