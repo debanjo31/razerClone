@@ -94,11 +94,9 @@ body {
 }
 
 .storeNav{
-  display: flex;
+
   height: 144px;
-  justify-content: space-between;
-  overflow-x: auto;
-  overflow-y: hidden;
+ 
 }
 
 .storeNav::-webkit-scrollbar {

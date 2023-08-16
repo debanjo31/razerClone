@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const StoreNav = () => {
   return (
-    <section className='storeNav mt-2 gap-8 xl:w-5/6 mx-auto'>
+    <section className='mt-2 storeNav xl:w-5/6 mx-auto flex justify-between gap-x-10 md:gap-x-6 overflow-x-scroll md:overflow-hidden w-full'>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
           <Image
