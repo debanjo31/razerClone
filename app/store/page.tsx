@@ -1,10 +1,12 @@
 'use client';
 import { getProducts } from '@/sanity/sanity-utils';
 import { Product } from '@/types/Product';
+7;
 import { useEffect, useState } from 'react';
 import StoreCard from '../componenets/StoreCard';
 import StoreNav from '../componenets/StoreNav';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -48,7 +50,7 @@ export default function Home() {
         </div>
       </section>
       <section className='store w-full'>
-        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 mb-8'>
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
           <div className='flex relative'>
             <FaChevronLeft
               onClick={handleNext}
@@ -67,6 +69,68 @@ export default function Home() {
               onClick={handlePrev}
               className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
             />
+          </div>
+        </div>
+      </section>
+      <section className='buyFeatures pb-12'>
+        <p className='text-center text-[#44d62c] text-2xl md:text-4xl font-bold'>
+          WHY BUY FROM RAZER.COM
+        </p>
+        <div className='flex flex-wrap justify-between gap-4'>
+          <div className='flex flex-col justify-center items-center'>
+            <Image
+              src='/img/dibs.svg'
+              alt='feature'
+              height='65'
+              width='65'
+            />
+            <p className='text-lg text-white'>Get First Dibs</p>
+            <p className='text-[#7F7D7F] text-md'>
+              Razer.com is the only place where you can buy our most anticipated
+              Razer gear immediately upon release
+            </p>
+          </div>
+
+          <div className='flex flex-col justify-center items-center'>
+            <Image
+              src='/img/gearArray.svg'
+              alt='feature'
+              height='65'
+              width='65'
+            />
+            <p className='text-lg text-white'>
+              The Largest Array Of Razer Gear
+            </p>
+            <p className='text-[#7F7D7F] text-md'>
+              As Razer’s official online store, we hold a massive collection of
+              products that can’t be matched anywhere else.
+            </p>
+          </div>
+          <div className='flex flex-col justify-center items-center'>
+            <Image
+              src='/img/gearSwag.svg'
+              alt='feature'
+              height='65'
+              width='65'
+            />
+            <p className='text-lg text-white'>Exclusive Razer Gear And Swag</p>
+            <p className='text-[#7F7D7F] text-md'>
+              Get access to limited edition Razer gear that’s only available on
+              Razer.com.
+            </p>
+          </div>
+          <div className='flex flex-col justify-center items-center'>
+            <Image
+              src='/img/pay.svg'
+              alt='feature'
+              height='65'
+              width='65'
+            />
+            <p className='text-lg text-white'>Play Now, Pay Later</p>
+            <p className='text-[#7F7D7F] text-md'>
+              With our 0% installment plan, spend more time gaming with your
+              sweet new gear and less time fussing over payment.
+            </p>
           </div>
         </div>
       </section>
