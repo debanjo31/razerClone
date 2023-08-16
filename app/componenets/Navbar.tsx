@@ -10,8 +10,8 @@ import Link from "next/link";
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
   return (
-    <div className='fixed bg-black text-[#7F7D7F] top-0 left-0 w-full z-20 border-b-2 border-[#44d62c] h-16 md:h-[80px] p-2 md:p-4 xl:px-8'>
-      <div className='flex justify-between md:justify-around xl:justify-between md:text-lg'>
+    <div className='fixed bg-black text-[#7F7D7F] top-0 left-0 w-full z-20 border-b-2 border-[#44d62c] h-16 md:h-[80px] p-2 md:p-4'>
+      <div className='xl:w-5/6 mx-auto flex justify-between md:justify-around xl:justify-between md:text-md'>
         {/* <div
           className="md:hidden mt-3"
           onClick={onOpen}
