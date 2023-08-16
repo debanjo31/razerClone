@@ -34,7 +34,7 @@ export default function Home() {
   };
   return (
     <main className='mt-16 md:mt-[80px] z-10 bg-black'>
-      <p className='text-center p-2 bg-[#555555] text-white text-md md:text-lg'>
+      <p className='text-center p-2 bg-[#555555] text-white text-md'>
         All orders over US$79 will enjoy free standard shipping to the United
         State
       </p>
