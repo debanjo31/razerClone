@@ -80,7 +80,7 @@ export default function Home() {
         <p className='text-center text-[#44d62c] text-2xl md:text-4xl font-bold mb-8'>
           WHY BUY FROM RAZER.COM
         </p>
-        <div className='flex flex-wrap justify-between gap-8 w-5/6 mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-8 w-5/6 mx-auto'>
           <div className='flex flex-col justify-center items-center gap-2 text-center md:max-w-[350px]'>
             <Image
               src='/img/dibs.svg'
