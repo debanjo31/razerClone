@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const StoreNav = () => {
   return (
-    <section className='storeNav mt-2 gap-8 lg:w-5/6 mx-auto'>
+    <section className='storeNav mt-2 gap-8 xl:w-5/6 mx-auto'>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
           <Image
@@ -13,7 +13,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Laptop</p>
+        <p className='text-center'>Laptop</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -24,7 +24,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Componenets</p>
+        <p className='text-center'>Componenets</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -35,7 +35,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Mice</p>
+        <p className='text-center'>Mice</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -46,7 +46,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Keyboard</p>
+        <p className='text-center'>Keyboard</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -57,7 +57,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Audio</p>
+        <p className='text-center'>Audio</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -68,7 +68,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Content Creation</p>
+        <p className='text-center'>Content Creation</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -79,7 +79,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Chairs</p>
+        <p className='text-center'>Chairs</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -90,7 +90,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Console</p>
+        <p className='text-center'>Console</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -101,7 +101,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Mobile</p>
+        <p className='text-center'>Mobile</p>
       </div>
       <div className='flex flex-col h-24 w-24 relative '>
         <div className='relative text-center'>
@@ -112,7 +112,7 @@ const StoreNav = () => {
             fill={true}
           />
         </div>
-        <p className="text-center">Gear</p>
+        <p className='text-center'>Gear</p>
       </div>
     </section>
   );
