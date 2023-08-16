@@ -52,10 +52,12 @@ export default function Home() {
       <section className='store w-full'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
           <div className='flex relative'>
-            <FaChevronLeft
-              onClick={handleNext}
-              className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-2xl'
-            />
+            {products && (
+              <FaChevronLeft
+                onClick={handleNext}
+                className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-2xl'
+              />
+            )}
             {products &&
               products.map((product: Product, index) => (
                 <StoreCard
@@ -65,10 +67,12 @@ export default function Home() {
                   currentProductId={index}
                 />
               ))}
-            <FaChevronRight
-              onClick={handlePrev}
-              className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
-            />
+            {products && (
+              <FaChevronRight
+                onClick={handlePrev}
+                className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
+              />
+            )}
           </div>
         </div>
       </section>
@@ -77,7 +81,7 @@ export default function Home() {
           WHY BUY FROM RAZER.COM
         </p>
         <div className='flex flex-wrap justify-between gap-8 w-5/6 mx-auto'>
-          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center md:max-w-[350px]'>
             <Image
               src='/img/dibs.svg'
               alt='feature'
@@ -91,7 +95,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center md:max-w-[350px]'>
             <Image
               src='/img/gearArray.svg'
               alt='feature'
@@ -106,7 +110,7 @@ export default function Home() {
               products that can’t be matched anywhere else.
             </p>
           </div>
-          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center md:max-w-[350px]'>
             <Image
               src='/img/gearSwag.svg'
               alt='feature'
@@ -119,7 +123,7 @@ export default function Home() {
               Razer.com.
             </p>
           </div>
-          <div className='flex flex-col justify-center items-center gap-2 text-center max-w-md md:max-w-sm'>
+          <div className='flex flex-col justify-center items-center gap-2 text-center md:max-w-[350px]'>
             <Image
               src='/img/pay.svg'
               alt='feature'
