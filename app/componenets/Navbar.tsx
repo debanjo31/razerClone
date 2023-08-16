@@ -10,7 +10,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
   return (
-    <div className='fixed bg-black text-[#7F7D7F] top-0 left-0 w-full z-20 border-b-2 border-[#44d62c] h-16  p-2 md:p-4'>
+    <div className='fixed bg-black text-[#7F7D7F] top-0 left-0 w-full z-20 border-b-2 border-[#44d62c] h-16  p-2 md:px-4'>
       <div className='xl:w-5/6 mx-auto flex justify-between md:justify-around xl:justify-between md:text-md'>
         {/* <div
           className="md:hidden mt-3"
@@ -23,7 +23,7 @@ const Navbar = () => {
           data-drawer-toggle='logo-sidebar'
           aria-controls='logo-sidebar'
           type='button'
-          className='items-center p-2 mt-2 ml-3 text-xl text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+          className='items-center p-2 mt-1 ml-3 text-xl text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
           onClick={() => setOpenSideBar(!openSideBar)}
         >
           <span className='sr-only'>Open sidebar</span>

@@ -1,12 +1,13 @@
 'use client';
 import { getProducts } from '@/sanity/sanity-utils';
 import { Product } from '@/types/Product';
-7;
 import { useEffect, useState } from 'react';
 import StoreCard from '../componenets/StoreCard';
 import StoreNav from '../componenets/StoreNav';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -50,7 +51,27 @@ export default function Home() {
         </div>
       </section>
       <section className='store w-full'>
-        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
+        <div className='w-full  pb-8'>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {products &&
+              products.map((product: Product, index) => (
+                <SwiperSlide>
+                  <StoreCard
+                    key={product._id}
+                    product={product}
+                    currentProduct={currentProduct}
+                    currentProductId={index}
+                  />
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        </div>
+        {/* <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
           <div className='flex relative'>
             {products && (
               <FaChevronLeft
@@ -74,7 +95,7 @@ export default function Home() {
               />
             )}
           </div>
-        </div>
+        </div> */}
       </section>
       <section className='buyFeatures pb-12 text-center mt-8'>
         <p className='text-center text-[#44d62c] text-2xl md:text-4xl font-bold mb-8'>
