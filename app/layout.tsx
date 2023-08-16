@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Navbar from './componenets/Navbar';
 import Footer from './componenets/Footer';
-import { Raleway } from 'next/font/google';
+import { Raleway, Titillium_Web } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'Razer Clone',
@@ -13,6 +13,11 @@ const raleway = Raleway({
   weight: '400',
   subsets: ['latin'],
 });
+
+const tweb = Titillium_Web({
+  weight: '400',
+  subsets: ['latin'],
+});
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={raleway.className}>
+      <body className={tweb.className}>
         <Navbar />
         {children}
         <Footer />
