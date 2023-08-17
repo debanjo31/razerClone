@@ -36,6 +36,8 @@ const Page = ({ params }: Props) => {
   return (
     <div className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
       <p>{product?.name}</p>
+      <p>{product?.slug}</p>
+      <p>{product?.price}</p>
       <section className='carousel'>
         {product?.images &&
           product?.images.map((img) => (
@@ -44,7 +46,7 @@ const Page = ({ params }: Props) => {
               alt={product.name}
               height='650'
               width='650'
-              className='rounded-t-md transition-transform duration-300 hover:scale-105'
+              className=''
             />
           ))}
       </section>
