@@ -53,8 +53,6 @@ export default function Home() {
       <section className='store w-full'>
         <div className='w-full  pb-8'>
           <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
           >
