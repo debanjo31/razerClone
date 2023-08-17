@@ -60,13 +60,10 @@ export default function Home() {
           >
             {products &&
               products.map((product: Product, index) => (
-                <SwiperSlide>
-                  <StoreCard
-                    key={product._id}
-                    product={product}
-                   
-                  />
-                </SwiperSlide>
+                <StoreCard
+                  key={product._id}
+                  product={product}
+                />
               ))}
           </Swiper>
         </div>

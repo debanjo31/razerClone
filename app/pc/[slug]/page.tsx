@@ -34,7 +34,7 @@ const Page = ({ params }: Props) => {
   }, []);
 
   return (
-    <div className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
+    <div className='mt-16  z-10 bg-[#252525]'>
       <p>{product?.name}</p>
       <p>{product?.slug}</p>
       <p>{product?.price}</p>
