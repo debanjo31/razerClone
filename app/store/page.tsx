@@ -64,8 +64,7 @@ export default function Home() {
                   <StoreCard
                     key={product._id}
                     product={product}
-                    currentProduct={currentProduct}
-                    currentProductId={index}
+                   
                   />
                 </SwiperSlide>
               ))}
