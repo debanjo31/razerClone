@@ -40,8 +40,8 @@ export default function Home() {
     (product) => product.type === 'software'
   );
   return (
-    <main className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
-      <p className='text-center p-2 bg-[#555555] text-white text-md md:text-lg'>
+    <main className='mt-16 z-10 bg-[#252525]'>
+      <p className='text-center p-2 bg-[#555555] text-white text-md'>
         All orders over US$79 will enjoy free standard shipping to the United
         State
       </p>

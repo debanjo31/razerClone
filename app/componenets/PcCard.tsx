@@ -23,8 +23,8 @@ const PcCard = ({ product }: PcCardProps) => {
         <Image
           src={urlFor(product.images[0]).width(650).height(650).url()}
           alt={product.name}
-          height='650'
-          width='650'
+          height='450'
+          width='450'
           className='rounded-t-md transition-transform duration-300 hover:scale-105'
         />
         <div className='p-5'>
