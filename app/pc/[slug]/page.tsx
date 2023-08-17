@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { Product } from '@/types/Product';
 import { useEffect, useState } from 'react';
 import { getProduct } from '@/sanity/sanity-utils';
@@ -36,7 +36,18 @@ const Page = ({ params }: Props) => {
   return (
     <div className='mt-16 md:mt-[80px] z-10 bg-[#252525]'>
       <p>{product?.name}</p>
-      <section className='carousel'></section>
+      <section className='carousel'>
+        {product?.images &&
+          product?.images.map((img) => (
+            <Image
+              src={urlFor(img).width(650).height(650).url()}
+              alt={product.name}
+              height='650'
+              width='650'
+              className='rounded-t-md transition-transform duration-300 hover:scale-105'
+            />
+          ))}
+      </section>
     </div>
   );
 };
