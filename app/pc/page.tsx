@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </section>
       <section className='w-full text-xl md:text-2xl py-12'>
-        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-8 w-5/6 mx-auto'>
           {laptopFilteredProducts &&
             laptopFilteredProducts.map((product: Product) => (
               <PcCard
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </section>
       <section className='w-full text-xl md:text-2xl py-12'>
-        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-8 w-5/6 mx-auto'>
           {periFilteredProducts &&
             periFilteredProducts.map((product: Product) => (
               <PcCard
@@ -112,7 +112,7 @@ export default function Home() {
         </div>
       </section>
       <section className='w-full text-2xl py-12'>
-        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-8 w-5/6 mx-auto'>
           {contentFilteredProducts &&
             contentFilteredProducts.map((product: Product) => (
               <PcCard
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       </section>
       <section className='w-full text-2xl py-12'>
-        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-8 w-5/6 mx-auto'>
           {softwareFilteredProducts &&
             softwareFilteredProducts.map((product: Product) => (
               <PcCard
