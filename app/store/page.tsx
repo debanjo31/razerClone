@@ -56,26 +56,7 @@ export default function Home() {
         </div>
       </section>
       <section className='store w-full'>
-        <div className='w-full  pb-8'>
-          <Swiper
-             pagination={{
-              dynamicBullets: true,
-            }}
-            modules={[Pagination]}
-            className="mySwiper"
-          >
-            {products &&
-              products.map((product: Product, index) => (
-                <SwiperSlide>
-                  <StoreCard
-                    key={product._id}
-                    product={product}
-                  />
-                </SwiperSlide>
-              ))}
-          </Swiper>
-        </div>
-        {/* <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
+        <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
           <div className='flex relative'>
             {products && (
               <FaChevronLeft
@@ -99,7 +80,7 @@ export default function Home() {
               />
             )}
           </div>
-        </div> */}
+        </div>
       </section>
       <section className='buyFeatures pb-12 text-center mt-8'>
         <p className='text-center text-[#44d62c] text-2xl md:text-4xl font-bold mb-8'>
