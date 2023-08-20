@@ -6,13 +6,6 @@ import StoreCard from '../componenets/StoreCard';
 import StoreNav from '../componenets/StoreNav';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import Pagination  from "swiper";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
