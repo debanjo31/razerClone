@@ -24,7 +24,7 @@ const StoreCard = ({
   return (
     <Link
       href={`/pc/${product.slug}`}
-      className='carousel block mt-1'
+      className='carousel block mt-1 mr-2'
     >
       <div className='h-full max-w-md md:max-w-sm  rounded-md shadow bg-[#111111] border-b-2 border-[#44d62c]'>
         <Image
