@@ -50,32 +50,34 @@ export default function Home() {
       </section>
       <section className='store w-full'>
         <div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-8 pb-8'>
-          {products && (
-            <FaChevronLeft
-              onClick={handleNext}
-              className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-2xl'
-            />
-          )}
-          {products &&
-            products.map((product: Product, index) => {
-              if (index === currentProduct || index === currentProduct + 1) {
-                return (
-                  <StoreCard
-                    key={product._id}
-                    product={product}
-                    currentProduct={currentProduct}
-                    currentProductId={index}
-                  />
-                );
-              }
-              return null;
-            })}
-          {products && (
-            <FaChevronRight
-              onClick={handlePrev}
-              className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
-            />
-          )}
+          <div className='hidden md:flex relative md:gap-2'>
+            {products && (
+              <FaChevronLeft
+                onClick={handleNext}
+                className=' absolute left-0 bottom-2/4 z-20  text-[#44d62c] text-2xl'
+              />
+            )}
+            {products &&
+              products.map((product: Product, index) => {
+                if (index === currentProduct || index === currentProduct + 1) {
+                  return (
+                    <StoreCard
+                      key={product._id}
+                      product={product}
+                      currentProduct={currentProduct}
+                      currentProductId={index}
+                    />
+                  );
+                }
+                return null;
+              })}
+            {products && (
+              <FaChevronRight
+                onClick={handlePrev}
+                className=' absolute right-0 bottom-2/4 z-20 text-[#44d62c] text-2xl'
+              />
+            )}
+          </div>
         </div>
       </section>
       <section className='buyFeatures pb-12 text-center mt-8'>
