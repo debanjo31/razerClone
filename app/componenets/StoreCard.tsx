@@ -28,10 +28,10 @@ const StoreCard = ({
     >
       <div className='h-full max-w-md md:max-w-sm  rounded-md shadow bg-[#111111] border-b-2 border-[#44d62c]'>
         <Image
-          src={urlFor(product.images[0]).width(650).height(650).url()}
+          src={urlFor(product.images[0]).width(450).height(450).url()}
           alt={product.name}
-          height='650'
-          width='650'
+          height='450'
+          width='450'
           className='rounded-t-md transition-transform duration-300 hover:scale-105'
         />
         <div className='p-5'>
