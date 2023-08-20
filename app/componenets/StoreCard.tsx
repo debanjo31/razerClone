@@ -26,8 +26,8 @@ const StoreCard = ({
       href={`/pc/${product.slug}`}
       className={
         currentProductId === currentProduct
-          ? 'carousel active block mt-1 md:h-[75vh]'
-          : 'carousel block mt-1 md:h-[75vh]'
+          ? 'carousel active block mt-1 '
+          : 'carousel block mt-1'
       }
     >
       <div className='h-full max-w-md md:max-w-sm  rounded-md shadow bg-[#111111] border-b-2 border-[#44d62c]'>
