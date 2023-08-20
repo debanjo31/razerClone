@@ -58,14 +58,19 @@ export default function Home() {
               />
             )}
             {products &&
-              products.map((product: Product, index) => (
-                <StoreCard
-                  key={product._id}
-                  product={product}
-                  currentProduct={currentProduct}
-                  currentProductId={index}
-                />
-              ))}
+              products.map((product: Product, index) => {
+                if (index === currentProduct || index === currentProduct + 1) {
+                  return (
+                    <StoreCard
+                      key={product._id}
+                      product={product}
+                      currentProduct={currentProduct}
+                      currentProductId={index}
+                    />
+                  );
+                }
+                return null;
+              })}
             {products && (
               <FaChevronRight
                 onClick={handlePrev}

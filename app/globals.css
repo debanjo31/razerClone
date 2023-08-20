@@ -99,8 +99,6 @@ body {
  
 }
 
-
-
 .storeNav div{
   flex-basis: 96px;
   flex-shrink: 0;
@@ -108,6 +106,7 @@ body {
 
 }
 
+/* 
 .carousel{
  z-index: -1;
   width: 0;
@@ -119,3 +118,22 @@ body {
   width: 100%;
   opacity: 1;
 }
+@media (min-width: 768px) {
+  .carousel {
+    justify-content: flex-start;
+    scroll-padding-left: 50px; 
+    flex-wrap: wrap;
+    gap: 10px; 
+    overflow-x: hidden; 
+    max-width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carousel-item {
+    width: calc(33.33% - (2 * (10px / 3)));
+    min-width: calc(33.33% - (2 * (10px / 3)));
+    max-width: calc(50% - (2 * (10px / 3)));
+  }} 
+
+  */
