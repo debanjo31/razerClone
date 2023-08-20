@@ -7,17 +7,29 @@ import config from '../../sanity/config/client-config';
 
 interface StoreCardProps {
   product: Product;
-  className?: string;
+  currentProduct: number;
+  currentProductId: number;
 }
 
-const StoreCard = ({ product }: StoreCardProps) => {
+const StoreCard = ({
+  product,
+  currentProduct,
+  currentProductId,
+}: StoreCardProps) => {
   const builder = imageUrlBuilder(config);
 
   function urlFor(source: string) {
     return builder.image(source);
   }
   return (
-    <Link href={`/pc/${product.slug}`}>
+    <Link
+      href={`/pc/${product.slug}`}
+      className={
+        currentProductId === currentProduct
+          ? 'carousel active block mt-1 '
+          : 'carousel block mt-1'
+      }
+    >
       <div className='h-full max-w-md md:max-w-sm  rounded-md shadow bg-[#111111] border-b-2 border-[#44d62c]'>
         <Image
           src={urlFor(product.images[0]).width(650).height(650).url()}

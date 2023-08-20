@@ -62,11 +62,8 @@ export default function Home() {
                 <StoreCard
                   key={product._id}
                   product={product}
-                  className={
-                    currentProductId === currentProduct
-                      ? 'carousel active block mt-1 '
-                      : 'carousel block mt-1'
-                  }
+                  currentProduct={currentProduct}
+                  currentProductId={index}
                 />
               ))}
             {products && (
