@@ -68,10 +68,8 @@ const Page = ({ params }: Props) => {
                         alt={product.name}
                         height='450'
                         width='450'
-                        className={`cursor-pointer w-24 h-24 p-2 border border-gray-100 transition-all ease-in-out duration-300 ${
-                          index === slideNumber
-                            ? 'border-b-2 border-[#44d62c] '
-                            : ''
+                        className={`cursor-pointer w-24 h-24 p-2 border border-gray-800 transition-all ease-in-out duration-300 ${
+                          index === slideNumber ? 'border-active ' : ''
                         }`}
                         loading='lazy'
                         onClick={() => setslideNumber(index)}
