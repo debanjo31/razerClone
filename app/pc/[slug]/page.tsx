@@ -46,8 +46,8 @@ const Page = ({ params }: Props) => {
             {product?.images && product.images[slideNumber] && (
               <Image
                 src={urlFor(product.images[slideNumber])
-                  .width(450)
-                  .height(450)
+                  .width(500)
+                  .height(500)
                   .url()}
                 alt={product.name}
                 height='450'
