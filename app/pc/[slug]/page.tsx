@@ -11,6 +11,7 @@ type Props = {
 
 const Page = ({ params }: Props) => {
   const [product, setProduct] = useState<Product | null>(null);
+  const [slideNumber, setslideNumber] = useState(0);
   const builder = imageUrlBuilder(config);
 
   function urlFor(source: string) {
@@ -42,9 +43,12 @@ const Page = ({ params }: Props) => {
       <section className='flex flex-col md:flex-row gap-y-28 w-full gap-x-10"'>
         <div className='w-full relative'>
           <div>
-            {product?.images && (
+            {product?.images && product.images[slideNumber] && (
               <Image
-                src={urlFor(product.images[0]).width(650).height(650).url()}
+                src={urlFor(product.images[slideNumber])
+                  .width(650)
+                  .height(650)
+                  .url()}
                 alt={product.name}
                 height='650'
                 width='650'
@@ -56,16 +60,22 @@ const Page = ({ params }: Props) => {
           <div className='absolute left-4 md:left-10 top-10'>
             <div className='my-4 flex flex-col gap-y-4 gap-x-4 items-center'>
               {product?.images &&
-                product.images.map((img: string) => (
-                  <Image
-                    src={urlFor(img).width(650).height(650).url()}
-                    alt={product.name}
-                    height='650'
-                    width='650'
-                    className='  cursor-pointer  w-20 h-24 p-2 border border-gray-700 bg-black transition-all ease-in-out duration-300'
-                    loading='lazy'
-                  />
-                ))}
+                product.images.map((img: string, index: number) => {
+                  if (index < 4) {
+                    return (
+                      <Image
+                        src={urlFor(img).width(650).height(650).url()}
+                        alt={product.name}
+                        height='650'
+                        width='650'
+                        className='cursor-pointer w-20 h-24 p-2 border border-gray-700 bg-black transition-all ease-in-out duration-300'
+                        loading='lazy'
+                        onClick={() => setslideNumber(index)}
+                      />
+                    );
+                  }
+                  return null;
+                })}
             </div>
           </div>
         </div>
