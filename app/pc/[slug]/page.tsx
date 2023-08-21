@@ -39,17 +39,31 @@ const Page = ({ params }: Props) => {
       <p>{product?.slug}</p>
       <p>{product?.price}</p>
       <section className='carousel'>
-        {product?.images &&
-          product.images.map((img: string) => (
-            <Image
-              src={urlFor(img).width(650).height(650).url()}
-              alt={product.name}
-              height='650'
-              width='650'
-              className='w-full h-[400px] object-contain'
-              loading='lazy'
-            />
-          ))}
+        {product?.images && (
+          <Image
+            src={urlFor(product.images[0]).width(650).height(650).url()}
+            alt={product.name}
+            height='650'
+            width='650'
+            className='w-full h-[400px] object-contain'
+            loading='lazy'
+          />
+        )}
+        <div className='absolute left-4 md:left-10 top-10'>
+          <div className='my-4 flex flex-col gap-y-4 gap-x-4 items-center'>
+            {product?.images &&
+              product.images.map((img: string) => (
+                <Image
+                  src={urlFor(img).width(650).height(650).url()}
+                  alt={product.name}
+                  height='650'
+                  width='650'
+                  className='  cursor-pointer  w-20 h-24 p-2 border border-gray-700 bg-black transition-all ease-in-out duration-300'
+                  loading='lazy'
+                />
+              ))}
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -82,7 +82,7 @@ export default function Home() {
               />
             )}
           </div>
-          <div className='hidden md:flex relative md:gap-2'>
+          <div className='hidden md:flex lg:hidden relative md:gap-2'>
             {products && (
               <FaChevronLeft
                 onClick={handleNext}
