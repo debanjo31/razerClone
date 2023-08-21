@@ -48,6 +48,16 @@ const Page = ({ params }: Props) => {
             className=''
           />
         )}
+        {product?.images &&
+          product.images.map((img: string) => (
+            <Image
+              src={urlFor(img).width(650).height(650).url()}
+              alt={product.name}
+              height='650'
+              width='650'
+              className=''
+            />
+          ))}
       </section>
     </div>
   );
