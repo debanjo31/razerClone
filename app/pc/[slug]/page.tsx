@@ -36,7 +36,7 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className='mt-16  z-10 bg-[#252525]'>
-      <p className='text-green-500 capitalize text-lg font-bold mb-3'>
+      <p className='text-[#44d62c] capitalize text-lg font-bold mb-3'>
         {product?.name}
       </p>
 
@@ -58,7 +58,7 @@ const Page = ({ params }: Props) => {
             )}
           </div>
           <div className='absolute left-4 md:left-10 top-10'>
-            <div className='my-4 flex flex-col gap-y-4 gap-x-4 items-center'>
+            <div className='flex flex-col gap-y-2 gap-x-2 items-center'>
               {product?.images &&
                 product.images.map((img: string, index: number) => {
                   if (index < 4) {
@@ -68,7 +68,11 @@ const Page = ({ params }: Props) => {
                         alt={product.name}
                         height='650'
                         width='650'
-                        className='cursor-pointer w-20 h-24 p-2 border border-gray-700 bg-black transition-all ease-in-out duration-300'
+                        className={`cursor-pointer w-20 h-24 p-2 border border-gray-700 transition-all ease-in-out duration-300 ${
+                          index === slideNumber
+                            ? 'border-2 border-[#44d62c]'
+                            : ''
+                        }`}
                         loading='lazy'
                         onClick={() => setslideNumber(index)}
                       />
