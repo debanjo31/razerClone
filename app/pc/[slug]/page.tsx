@@ -39,15 +39,6 @@ const Page = ({ params }: Props) => {
       <p>{product?.slug}</p>
       <p>{product?.price}</p>
       <section className='carousel'>
-        {product?.images && (
-          <Image
-            src={urlFor(product.images[0]).width(650).height(650).url()}
-            alt={product.name}
-            height='650'
-            width='650'
-            className=''
-          />
-        )}
         {product?.images &&
           product.images.map((img: string) => (
             <Image
@@ -55,7 +46,8 @@ const Page = ({ params }: Props) => {
               alt={product.name}
               height='650'
               width='650'
-              className=''
+              className='w-full h-[400px] object-contain'
+              loading='lazy'
             />
           ))}
       </section>
