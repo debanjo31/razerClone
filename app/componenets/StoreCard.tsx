@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import imageUrlBuilder from '@sanity/image-url';
 import config from '../../sanity/config/client-config';
+import { useCartStore } from './store/useCartStore';
 
 interface StoreCardProps {
   product: Product;
@@ -16,6 +17,7 @@ const StoreCard = ({
   currentProduct,
   currentProductId,
 }: StoreCardProps) => {
+  const { addToCart } = useCartStore();
   const builder = imageUrlBuilder(config);
 
   function urlFor(source: string) {
@@ -47,7 +49,12 @@ const StoreCard = ({
           </p>
           <div className='flex justify-between text-white'>
             <p>{product.price && 'US$' + product.price}</p>
-            <button className='block text-black bg-[#44d62c] p-1 '>BUY</button>
+            <button
+              className='block text-black bg-[#44d62c] p-2 '
+              onClick={() => addToCart(product)}
+            >
+              BUY
+            </button>
           </div>
         </div>
       </div>
