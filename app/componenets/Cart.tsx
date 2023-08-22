@@ -62,7 +62,7 @@ const Cart = () => {
           </Menu.Items>
         </Transition>
       </Menu>
-      <div className='text-white rounded-full bg--[#44d62c] w-5 h-5 text-sm -ml-1 absolute top-0 left-0'>
+      <div className='text-white rounded-full bg-[#44d62c] w-5 h-5 text-sm -ml-1 absolute top-0 right-0 text-center'>
         {totalItems}
       </div>
     </div>
