@@ -39,7 +39,6 @@ const Page = ({ params }: Props) => {
       <p className='text-[#44d62c] capitalize text-lg font-bold mb-4'>
         {product?.name}
       </p>
-
       <section className='mb-12'>
         <div className='w-full relative'>
           <div>

@@ -11,4 +11,5 @@ export interface Product {
   image: string;
   images: Array<any>;
   features: Array<any>;
+  quantity?: number;
 }
