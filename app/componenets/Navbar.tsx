@@ -149,6 +149,7 @@ const Navbar = () => {
             <Link
               href={'/pc'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               PC
             </Link>
@@ -169,24 +170,28 @@ const Navbar = () => {
             <Link
               href={'/lifestyle'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Lifestyle
             </Link>
             <Link
               href={'/services'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Services
             </Link>
             <Link
               href={'/community'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Community
             </Link>
             <Link
               href={'/support'}
               className='block py-4  border-b-2 border-gray-500'
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               Support
             </Link>

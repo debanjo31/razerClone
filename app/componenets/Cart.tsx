@@ -11,7 +11,7 @@ const Cart = () => {
     <div className='relative'>
       <Menu
         as='div'
-        className='relative block text-left '
+        className='relative inline-block text-left '
       >
         <div>
           <Menu.Button className='inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-3 text-sm font-medium hover:bg-opacity-30'>
@@ -30,7 +30,7 @@ const Cart = () => {
           leaveFrom='transform opacity-100 scale-100'
           leaveTo='transform opacity-0 scale-95'
         >
-          <Menu.Items className='  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-800 text-white border-2 border-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none '>
+          <Menu.Items className='absolute right-0 mt-2s  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-800 text-white border-2 border-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none '>
             <div className='px-1 py-1 w-5/6 mx-auto mb-4 '>
               <p className='py-4 text-center border-b-2 border-gray-500'>
                 Your cart is empty
