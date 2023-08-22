@@ -9,6 +9,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
+
   return (
     <div className='fixed bg-black text-[#7F7D7F] top-0 left-0 w-full z-20 border-b-2 border-[#44d62c] h-16  p-2 md:px-4'>
       <div className='xl:w-5/6 mx-auto flex justify-between md:justify-around xl:justify-between md:text-md'>
