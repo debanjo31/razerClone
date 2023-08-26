@@ -34,7 +34,7 @@ const Cart = () => {
             <div className='px-1 py-1 w-5/6 mx-auto mb-4 '>
               <p className='py-4 text-center border-b-2 border-gray-500'>
                 <Link href={'/cart'}>
-                  <button className='block bg-[#44d62c] p-2 w-3/6 mx-auto'>
+                  <button className='block bg-[#44d62c] p-2 w-4/6 rounded-md mx-auto'>
                     CHECKOUT
                   </button>
                 </Link>
@@ -42,7 +42,7 @@ const Cart = () => {
               <Menu.Item>
                 <Link href={'/cart'}>
                   <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                    Cart {cartItems}
+                    `Cart ( ${cartItems} )`
                   </p>
                 </Link>
               </Menu.Item>
