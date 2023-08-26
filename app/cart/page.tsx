@@ -1,6 +1,7 @@
 'use client';
-
+import Link from 'next/link';
 import React from 'react';
+
 import { useCartStore } from '../componenets/store/useCartStore';
 
 const Cart = () => {
@@ -13,12 +14,12 @@ const Cart = () => {
             <span className='capitalize text-xl md:text-2xl'>
               your cart is empty eje mi..
             </span>
-            <a
+            <Link
               className='uppercase hover:text-red-500 text-sm underline'
-              href='/'
+              href={'/store'}
             >
               Go back home and buy something
-            </a>
+            </Link>
           </div>
         </div>
       ) : (
