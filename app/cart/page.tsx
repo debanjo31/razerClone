@@ -53,6 +53,11 @@ const Cart = () => {
                 />
               ))}
             </ul>
+            <div className="flex justify-end">
+              <button className="underline underline-offset-4 hover:text-red-500 capitalize">clear cart</button></div>
+                <div className="my-5 py-5 text-sm border-b border-gray-500">
+                    <p>If you’re a RazerStore Rewards member, log in with your Razer ID and earn up to 1,750 with this purchase. <br /><span className="text-blue-400">What is RazerStore Rewards &amp; what can I do with it?</span></p>
+                </div>
           </div>
         </div>
       )}
