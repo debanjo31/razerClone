@@ -6,7 +6,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { useCartStore } from './store/useCartStore';
 
 const Cart = () => {
-  const { totalItems } = useCartStore();
+  const { cartItems } = useCartStore();
   return (
     <div className='relative'>
       <Menu
@@ -33,8 +33,8 @@ const Cart = () => {
           <Menu.Items className='absolute right-0 mt-2s  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-800 text-white border-2 border-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none '>
             <div className='px-1 py-1 w-5/6 mx-auto mb-4 '>
               <p className='py-4 text-center border-b-2 border-gray-500'>
-                {totalItems > 0
-                  ? `Cart Items: ${totalItems}`
+                {cartItems > 0
+                  ? `Cart Items: ${cartItems}`
                   : ' Your cart is empty'}
               </p>
               <Menu.Item>
@@ -65,7 +65,7 @@ const Cart = () => {
         </Transition>
       </Menu>
       <div className='text-white rounded-full bg-[#44d62c] w-5 h-5 text-sm -ml-1 absolute top-0 right-0 text-center'>
-        {totalItems}
+        {cartItems}
       </div>
     </div>
   );
