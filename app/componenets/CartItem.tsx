@@ -23,16 +23,19 @@ const CartItem = ({ product }: CartProps) => {
         <Image
           src={urlFor(product.images[0]).width(250).height(250).url()}
           alt={product.name}
-          height='250'
-          width='250'
-          className='rounded-md transition-transform duration-300 hover:scale-105 mb-2'
+          height='128'
+          width='128'
+          className='rounded-md w-32 h-32 object-contain transition-transform duration-300 hover:scale-105 mb-2'
         />
         <div className='flex flex-col gap-y-4'>
           <h4 className='text-xl capitalize'>{product.name}</h4>
           <span className='flex items-center gap-x-2'>
-            <button className='text-green-500 font-semibold'>
+            <Link
+              href={`/pc/${product.slug}`}
+              className='text-[#44d62c] font-semibold'
+            >
               show details
-            </button>
+            </Link>
             <svg
               stroke='currentColor'
               fill='currentColor'

@@ -3,10 +3,12 @@ import React from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
+import useFromStore from '../hook/useFromStore';
 import { useCartStore } from './store/useCartStore';
 import Link from 'next/link';
+
 const Cart = () => {
-  const { cartItems } = useCartStore();
+  const cart = useFromStore(useCartStore, (state) => state.cart);
   return (
     <div className='relative'>
       <Menu
@@ -44,7 +46,7 @@ const Cart = () => {
               <Menu.Item>
                 <Link href={'/cart'}>
                   <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                    Cart ( {cartItems} )
+                    Cart ( {cart?.length} )
                   </p>
                 </Link>
               </Menu.Item>
@@ -71,7 +73,7 @@ const Cart = () => {
         </Transition>
       </Menu>
       <div className='text-white rounded-full bg-[#44d62c] w-5 h-5 text-sm -ml-1 absolute top-0 right-0 text-center'>
-        {cartItems}
+        {cart?.length}
       </div>
     </div>
   );

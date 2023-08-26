@@ -12,11 +12,7 @@ interface StoreCardProps {
   currentProductId: number;
 }
 
-const StoreCard = ({
-  product,
-  currentProduct,
-  currentProductId,
-}: StoreCardProps) => {
+const StoreCard = ({ product }: StoreCardProps) => {
   const { addToCart } = useCartStore();
   const builder = imageUrlBuilder(config);
 
