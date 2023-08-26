@@ -2,7 +2,7 @@ import { Product } from '@/types/Product';
 import { FaTrashAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useCartStore } from './store/useCartStore';
 import imageUrlBuilder from '@sanity/image-url';
 import config from '../../sanity/config/client-config';
 
@@ -11,6 +11,7 @@ interface CartProps {
 }
 
 const CartItem = ({ product }: CartProps) => {
+  const { removeFromCart, addToCart } = useCartStore();
   const builder = imageUrlBuilder(config);
 
   function urlFor(source: string) {
@@ -22,8 +23,8 @@ const CartItem = ({ product }: CartProps) => {
         <Image
           src={urlFor(product.images[0]).width(450).height(450).url()}
           alt={product.name}
-          height='450'
-          width='450'
+          height='250'
+          width='250'
           className='rounded-t-md transition-transform duration-300 hover:scale-105'
         />
         <div className='flex flex-col gap-y-4'>
@@ -49,9 +50,17 @@ const CartItem = ({ product }: CartProps) => {
       </div>
       <div className='md:w-[600px] flex flex-col md:flex-row gap-y-3 gap-x-10 justify-between max-w-full items-center'>
         <div className='flex gap-x-4 items-center'>
+          <button
+            title='Remove Item'
+            className='text-red-500 hover:text-red-600 ml-4'
+            onClick={() => removeFromCart(product)}
+          >
+            <FaTrashAlt size={18} />
+          </button>
           <span className='border w-16 h-14 flex items-center justify-center border-gray-500 rounded-md p-2'>
             {product.quantity}
           </span>
+          <span onClick={() => addToCart(product)}>+</span>
         </div>
         <div>
           <p className='text-2xl'>USD {product.price}</p>
