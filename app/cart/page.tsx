@@ -6,8 +6,8 @@ import { useCartStore } from '../componenets/store/useCartStore';
 const Cart = () => {
   const { cartItems } = useCartStore();
   return (
-    <div>
-      {cartItems > 0 ? (
+    <div className='mt-16'>
+      {cartItems === 0 ? (
         <div className='container mx-auto my-20'>
           <div className='flex flex-col items-center min-h-[40vh] justify-center p-2 gap-y-4'>
             <span className='capitalize text-xl md:text-2xl'>
