@@ -33,6 +33,12 @@ const Cart = () => {
         <div>
           <div className='bg-stone-900 md:px-10 w-full p-4 flex justify-between items-center capitalize'>
             <h4>your cart total is US${total}</h4>
+            <Link
+              className='block bg-[#44d62c] p-2 px-8'
+              href={'#'}
+            >
+              CheckOut
+            </Link>
           </div>
         </div>
       )}
