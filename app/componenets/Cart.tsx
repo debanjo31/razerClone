@@ -4,7 +4,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { useCartStore } from './store/useCartStore';
-
+import Link from 'next/link';
 const Cart = () => {
   const { cartItems } = useCartStore();
   return (
@@ -33,14 +33,18 @@ const Cart = () => {
           <Menu.Items className='absolute right-0 mt-2s  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-800 text-white border-2 border-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none '>
             <div className='px-1 py-1 w-5/6 mx-auto mb-4 '>
               <p className='py-4 text-center border-b-2 border-gray-500'>
-                {cartItems > 0
-                  ? `Cart Items: ${cartItems}`
-                  : ' Your cart is empty'}
+                <Link href={'/cart'}>
+                  <button className='block text-black bg-[#0a0f09] p-2 w-3/6 mx-auto'>
+                    CHECKOUT
+                  </button>
+                </Link>
               </p>
               <Menu.Item>
-                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  Cart
-                </p>
+                <Link href={'/cart'}>
+                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                    Cart {cartItems}
+                  </p>
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
