@@ -32,13 +32,15 @@ const Cart = () => {
         >
           <Menu.Items className='absolute right-0 mt-2s  w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-800 text-white border-2 border-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none '>
             <div className='px-1 py-1 w-5/6 mx-auto mb-4 '>
-              <p className='py-4 text-center border-b-2 border-gray-500'>
-                <Link href={'/cart'}>
-                  <p className='block bg-[#44d62c] p-2 w-4/6 rounded-md mx-auto'>
-                    CHECKOUT
-                  </p>
-                </Link>
-              </p>
+              <Menu.Item>
+                <p className='py-4 text-center border-b-2 border-gray-500'>
+                  <Link href={'/cart'}>
+                    <p className='block bg-[#44d62c] p-2 w-4/6 rounded-md mx-auto'>
+                      CHECKOUT
+                    </p>
+                  </Link>
+                </p>
+              </Menu.Item>
               <Menu.Item>
                 <Link href={'/cart'}>
                   <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
