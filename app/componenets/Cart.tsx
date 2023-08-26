@@ -34,7 +34,7 @@ const Cart = () => {
             <div className='px-1 py-1 w-5/6 mx-auto mb-4 '>
               <p className='py-4 text-center border-b-2 border-gray-500'>
                 <Link href={'/cart'}>
-                  <button className='block text-black bg-[#0a0f09] p-2 w-3/6 mx-auto'>
+                  <button className='block bg-[#44d62c] p-2 w-3/6 mx-auto'>
                     CHECKOUT
                   </button>
                 </Link>
