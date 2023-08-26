@@ -21,11 +21,11 @@ const CartItem = ({ product }: CartProps) => {
     <li className='flex gap-y-10 justify-between items-center border-b border-gray-500 my-10 py-4 w-full'>
       <div className='w-full flex flex-col md:flex-row gap-x-10'>
         <Image
-          src={urlFor(product.images[0]).width(450).height(450).url()}
+          src={urlFor(product.images[0]).width(250).height(250).url()}
           alt={product.name}
           height='250'
           width='250'
-          className='rounded-t-md transition-transform duration-300 hover:scale-105'
+          className='rounded-md transition-transform duration-300 hover:scale-105 mb-2'
         />
         <div className='flex flex-col gap-y-4'>
           <h4 className='text-xl capitalize'>{product.name}</h4>
@@ -38,7 +38,7 @@ const CartItem = ({ product }: CartProps) => {
               fill='currentColor'
               stroke-width='0'
               viewBox='0 0 1024 1024'
-              className='text-green-500 cursor-pointer'
+              className='text--[#44d62c] cursor-pointer'
               height='1em'
               width='1em'
               xmlns='http://www.w3.org/2000/svg'
