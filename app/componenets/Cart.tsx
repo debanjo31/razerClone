@@ -58,31 +58,25 @@ const Cart = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <div>
-                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                    <FaBars className='inline-block mr-2' /> Orders
-                  </p>
-                </div>
+                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                  <FaBars className='inline-block mr-2' /> Orders
+                </p>
               </Menu.Item>
               <Menu.Item>
-                <div>
-                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                    <FaUserAlt className='inline-block mr-2' /> Account
-                  </p>
-                </div>
+                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                  <FaUserAlt className='inline-block mr-2' /> Account
+                </p>
               </Menu.Item>
               <Menu.Item>
-                <div>
-                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                    <FaGem className='inline-block mr-2' /> RazerStore Rewards
-                  </p>
-                </div>
+                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                  <FaGem className='inline-block mr-2' /> RazerStore Rewards
+                </p>
               </Menu.Item>
               <Menu.Item>
-                <div>
+                <p className='py-2  text-gray-200'>
                   <FaRegUser className='inline-block mr-2' />
-                  <p className='py-2  text-gray-200'>Login</p>
-                </div>
+                  Login
+                </p>
               </Menu.Item>
             </div>
           </Menu.Items>
