@@ -11,7 +11,7 @@ export default async function ServerPage() {
 
   return (
     <section className='flex flex-col gap-6'>
-      <p>LogedIn</p>
+      <p>Checkouts</p>
     </section>
   );
 }
