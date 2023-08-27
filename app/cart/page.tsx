@@ -6,7 +6,7 @@ import { useCartStore } from '../componenets/store/useCartStore';
 import useFromStore from '../hook/useFromStore';
 const Cart = () => {
   const cart = useFromStore(useCartStore, (state) => state.cart);
-
+  const { removeFromCart } = useCartStore();
   let total = 0;
   if (cart) {
     total = cart.reduce(
@@ -15,6 +15,9 @@ const Cart = () => {
     );
   }
 
+  const clearCart = () => {
+    cart?.map((product) => removeFromCart(product));
+  };
   return (
     <div className='mt-16'>
       {cart?.length === 0 ? (
@@ -54,7 +57,10 @@ const Cart = () => {
               ))}
             </ul>
             <div className='flex justify-end'>
-              <button className='underline underline-offset-4 hover:text-red-500 capitalize'>
+              <button
+                className='underline underline-offset-4 hover:text-red-500 capitalize'
+                onClick={clearCart}
+              >
                 clear cart
               </button>
             </div>
@@ -69,7 +75,7 @@ const Cart = () => {
             </div>
             <div className='my-10 flex flex-col gap-y-10 gap-x-5 md:flex-row justify-between w-full'>
               <div className='w-full flex items-start flex-col gap-y-5'>
-                <button className='text-green-700 flex gap-x-1 items-center capitalize transition ease-in-out duration-500'>
+                <button className='text-[#43d62c67] flex gap-x-1 items-center capitalize transition ease-in-out duration-500'>
                   have a promo code?{' '}
                   <svg
                     stroke='currentColor'
@@ -131,8 +137,16 @@ const Cart = () => {
             <div className='flex items-start justify-start w-full md:w-[70%] my-10 capitalize text-2xl'>
               <span className='flex justify-between w-full items-center'>
                 <p>your total</p>
-                <p>US$27719</p>
+                <p>US${total}</p>
               </span>
+            </div>
+            <div className='my-10'>
+              <Link
+                className='block bg-[#44d62c] rounded-md p-2 px-8'
+                href={'#'}
+              >
+                CheckOut
+              </Link>
             </div>
           </div>
         </div>
