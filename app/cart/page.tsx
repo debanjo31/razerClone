@@ -41,7 +41,7 @@ const Cart = () => {
               <h4 className='text-white'>your cart total is US${total}</h4>
               <Link
                 className='block bg-[#44d62c] rounded-md p-2 px-8'
-                href={'#'}
+                href={'/checkout'}
               >
                 CheckOut
               </Link>
@@ -143,7 +143,7 @@ const Cart = () => {
             <div className='my-10 flex flex-col items-end justify-end'>
               <Link
                 className='block bg-[#44d62c] rounded-md py-4 px-8'
-                href={'#'}
+                href={'/checkout'}
               >
                 CheckOut
               </Link>
