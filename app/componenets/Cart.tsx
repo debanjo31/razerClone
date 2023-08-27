@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment } from 'react';
 import {
   FaShoppingCart,
   FaBars,
@@ -58,23 +58,31 @@ const Cart = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  <FaBars className='inline-block mr-2' /> Orders
-                </p>
+                <div>
+                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                    <FaBars className='inline-block mr-2' /> Orders
+                  </p>
+                </div>
               </Menu.Item>
               <Menu.Item>
-                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  <FaUserAlt className='inline-block mr-2' /> Account
-                </p>
+                <div>
+                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                    <FaUserAlt className='inline-block mr-2' /> Account
+                  </p>
+                </div>
               </Menu.Item>
               <Menu.Item>
-                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  <FaGem className='inline-block mr-2' /> RazerStore Rewards
-                </p>
+                <div>
+                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                    <FaGem className='inline-block mr-2' /> RazerStore Rewards
+                  </p>
+                </div>
               </Menu.Item>
               <Menu.Item>
-                <FaRegUser className='inline-block mr-2' />{' '}
-                <p className='py-2  text-gray-200'>Login</p>
+                <div>
+                  <FaRegUser className='inline-block mr-2' />
+                  <p className='py-2  text-gray-200'>Login</p>
+                </div>
               </Menu.Item>
             </div>
           </Menu.Items>
