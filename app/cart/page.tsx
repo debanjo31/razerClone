@@ -35,7 +35,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className='bg-black text-white'>
+        <div className='bg-black text-white pb-8'>
           <div className='bg-stone-900 w-full p-4'>
             <div className='xl:w-5/6 mx-auto p-4 flex justify-between items-center capitalize'>
               <h4 className='text-white'>your cart total is US${total}</h4>

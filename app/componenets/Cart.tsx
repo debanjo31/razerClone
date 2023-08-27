@@ -2,7 +2,13 @@
 import React from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { FaCartPlus } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaBars,
+  FaUserAlt,
+  FaGem,
+  FaRegUser,
+} from 'react-icons/fa';
 import useFromStore from '../hook/useFromStore';
 import { useCartStore } from './store/useCartStore';
 import Link from 'next/link';
@@ -17,7 +23,7 @@ const Cart = () => {
       >
         <div>
           <Menu.Button className='inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-3 text-sm font-medium hover:bg-opacity-30'>
-            <FaCartPlus
+            <FaShoppingCart
               className=' h-5 w-5 '
               aria-hidden='true'
             />
@@ -46,26 +52,28 @@ const Cart = () => {
               <Menu.Item>
                 <Link href={'/cart'}>
                   <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                    Cart ( {cart?.length} )
+                    <FaShoppingCart className='inline-block mr-2' /> Cart ({' '}
+                    {cart?.length} )
                   </p>
                 </Link>
               </Menu.Item>
               <Menu.Item>
                 <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  Orders
+                  <FaBars className='inline-block mr-2' /> Orders
                 </p>
               </Menu.Item>
               <Menu.Item>
                 <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  Account
+                  <FaUserAlt className='inline-block mr-2' /> Account
                 </p>
               </Menu.Item>
               <Menu.Item>
                 <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  RazerStore Rewards
+                  <FaGem className='inline-block mr-2' /> RazerStore Rewards
                 </p>
               </Menu.Item>
               <Menu.Item>
+                <FaRegUser className='inline-block mr-2' />{' '}
                 <p className='py-2  text-gray-200'>Login</p>
               </Menu.Item>
             </div>

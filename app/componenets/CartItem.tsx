@@ -63,7 +63,12 @@ const CartItem = ({ product }: CartProps) => {
           <span className='border w-16 h-14 flex items-center justify-center border-gray-500 rounded-md p-2'>
             {product.quantity}
           </span>
-          <span onClick={() => addToCart(product)}>+</span>
+          <span
+            className='cursor-pointer'
+            onClick={() => addToCart(product)}
+          >
+            +
+          </span>
         </div>
         <div>
           <p className='text-2xl'>USD {product.price}</p>
