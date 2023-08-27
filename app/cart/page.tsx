@@ -140,9 +140,9 @@ const Cart = () => {
                 <p>US${total}</p>
               </span>
             </div>
-            <div className='my-10'>
+            <div className='my-10 flex flex-col items-end justify-end'>
               <Link
-                className='block bg-[#44d62c] rounded-md p-2 px-8'
+                className='block bg-[#44d62c] rounded-md py-4 px-8'
                 href={'#'}
               >
                 CheckOut
