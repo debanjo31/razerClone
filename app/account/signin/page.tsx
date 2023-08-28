@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { LoginForm } from './form';
 const page = () => {
   return (
     <main className='section h-max md:h-screen'>
@@ -23,7 +23,7 @@ const page = () => {
               className='w-full placeholder:uppercase bg-transparent border-gray-700'
             />
             <div className='my-5'>
-              <button className='w-full uppercase font-bold p-2 bg-green-600'>
+              <button className='w-full uppercase font-bold p-2 bg-[#44d62c]'>
                 login
               </button>
             </div>
@@ -34,9 +34,10 @@ const page = () => {
               </p>
             </div>
             <div className='py-5 border-t'>
-              <button className='w-full bg-gray-100 uppercase p-2 text-black font-bold hover:bg-gray-300'>
+              {/* <button className='w-full bg-gray-100 uppercase p-2 text-black font-bold hover:bg-gray-300'>
                 Sign in with google
-              </button>
+              </button> */}
+              <LoginForm />
             </div>
           </div>
         </div>
