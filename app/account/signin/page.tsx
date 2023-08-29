@@ -29,11 +29,10 @@ const page = () => {
             </div>
             <div>
               <p className='text-sm text-center text-gray-400'>
-                <span className='font-bold text-red-700'>NOTE</span>, only sign
-                in with google auth, others dont work yet
+                <span className='font-bold text-red-700'>NOTE</span>email and password dont work yet
               </p>
             </div>
-            <div className='py-5 border-t'>
+            <div className='py-5 '>
               {/* <button className='w-full bg-gray-100 uppercase p-2 text-black font-bold hover:bg-gray-300'>
                 Sign in with google
               </button> */}
