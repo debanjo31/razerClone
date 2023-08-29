@@ -101,7 +101,7 @@ export const LoginForm = () => {
           height='24'
           width='24'
           className='pr-2'
-          src='/images/google.svg'
+          src='/img/google.svg'
           alt=''
           style={{ height: '2rem' }}
         />
@@ -116,7 +116,7 @@ export const LoginForm = () => {
           height='24'
           width='24'
           className='pr-2'
-          src='/images/github.svg'
+          src='/img/github.svg'
           alt=''
           style={{ height: '2.2rem' }}
         />
