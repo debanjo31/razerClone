@@ -34,10 +34,10 @@ const page = () => {
               </p>
             </div>
             <div className='py-5 border-t'>
-              {/* <button className='w-full bg-gray-100 uppercase p-2 text-black font-bold hover:bg-gray-300'>
+              <button className='w-full bg-gray-100 uppercase p-2 text-black font-bold hover:bg-gray-300'>
                 Sign in with google
-              </button> */}
-              <LoginForm />
+              </button>
+              {/* <LoginForm /> */}
             </div>
           </div>
         </div>

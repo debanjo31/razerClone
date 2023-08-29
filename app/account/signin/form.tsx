@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
+import Image from 'next/image';
 
 export const LoginForm = () => {
   const router = useRouter();
