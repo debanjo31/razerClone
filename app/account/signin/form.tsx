@@ -15,7 +15,7 @@ export const LoginForm = () => {
   const [error, setError] = useState('');
 
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/profile';
+  const callbackUrl = searchParams.get('callbackUrl') || '/account';
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +57,7 @@ export const LoginForm = () => {
       {error && (
         <p className='text-center bg-red-300 py-4 mb-6 rounded'>{error}</p>
       )}
-      <div className='mb-6'>
+      {/* <div className='mb-6'>
         <input
           required
           type='email'
@@ -86,7 +86,7 @@ export const LoginForm = () => {
         disabled={loading}
       >
         {loading ? 'loading...' : 'Sign In'}
-      </button>
+      </button> */}
 
       <div className='flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5'>
         <p className='text-center font-semibold mx-4 mb-0'>OR</p>
@@ -98,7 +98,9 @@ export const LoginForm = () => {
         onClick={() => signIn('google', { callbackUrl })}
         role='button'
       >
-        <img
+        <Image
+          height='24'
+          width='24'
           className='pr-2'
           src='/images/google.svg'
           alt=''
@@ -112,7 +114,9 @@ export const LoginForm = () => {
         onClick={() => signIn('github', { callbackUrl })}
         role='button'
       >
-        <img
+        <Image
+          height='24'
+          width='24'
           className='pr-2'
           src='/images/github.svg'
           alt=''
