@@ -32,7 +32,7 @@ const page = () => {
                 <span className='font-bold text-red-700'>NOTE</span>email and password dont work yet
               </p>
             </div>
-            <div className='py-5 '>
+            <div className='py-4 '>
               {/* <button className='w-full bg-gray-100 uppercase p-2 text-black font-bold hover:bg-gray-300'>
                 Sign in with google
               </button> */}

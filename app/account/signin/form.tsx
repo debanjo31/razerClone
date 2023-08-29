@@ -53,7 +53,10 @@ export const LoginForm = () => {
     'form-control block w-full px-4 py-5 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none';
 
   return (
-    <form onSubmit={onSubmit}>
+    <form
+      onSubmit={onSubmit}
+      className='w-full'
+    >
       {error && (
         <p className='text-center bg-red-300 py-4 mb-6 rounded'>{error}</p>
       )}
@@ -93,7 +96,7 @@ export const LoginForm = () => {
       </div>
 
       <a
-        className='px-7 py-2 bg-white text-black border-2 border-[#44d62c] font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3'
+        className='px-7 py-2 bg-white text-black  font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3'
         onClick={() => signIn('google', { callbackUrl })}
         role='button'
       >
@@ -108,7 +111,7 @@ export const LoginForm = () => {
         Continue with Google
       </a>
       <a
-        className='px-7 py-2 bg-white text-[#44d62c]  font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center'
+        className='px-7 py-2 bg-white text-black  font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center'
         onClick={() => signIn('github', { callbackUrl })}
         role='button'
       >
