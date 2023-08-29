@@ -9,7 +9,7 @@ const page = () => {
              */}
       </div>
       <div className='flex items-center justify-center py-20'>
-        <div className='border md:w-[35%] border-black bg-black text-white p-6'>
+        <div className='border w-full md:w-[45%] lg:w-[35%] border-black bg-black text-white p-6'>
           <h1 className='uppercase text-2xl'>Razer Login</h1>
           <div className='my-5 flex flex-col gap-y-4'>
             <input
@@ -29,7 +29,8 @@ const page = () => {
             </div>
             <div>
               <p className='text-sm text-center text-gray-400'>
-                <span className='font-bold text-red-700'>NOTE</span>email and password dont work yet
+                <span className='font-bold text-red-700'>NOTE</span>email and
+                password dont work yet
               </p>
             </div>
             <div className='py-4 '>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className='mt-16 md:mt-[80px] z-10'>
+    <main className='mt-16 z-10'>
       <p className='text-center p-2 bg-[#555555] text-white text-md '>
         All orders over US$79 will enjoy free standard shipping to the United
         State
