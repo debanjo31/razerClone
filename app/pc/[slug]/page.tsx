@@ -80,6 +80,13 @@ const Page = ({ params }: Props) => {
             </div>
           </div>
         </div>
+        <div>
+          <p className='text-[#44d62c] capitalize text-lg font-bold mb-4 hidden md:hidden'>
+            {product?.name}
+          </p>
+          <p className='text-sm text-gray-300'>{product?.description}</p>
+          <p className='text-sm text-gray-300'>{product?.price}</p>
+        </div>
       </section>
     </div>
   );
