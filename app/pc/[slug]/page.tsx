@@ -36,11 +36,11 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className='mt-16  z-10 bg-[#252525]'>
-      <p className='text-[#44d62c] capitalize text-lg font-bold mb-4'>
+      <p className='text-[#44d62c] capitalize text-lg font-bold mb-4 md:hidden'>
         {product?.name}
       </p>
-      <section className='mb-12'>
-        <div className='w-full relative'>
+      <section className='mb-12 md:flex'>
+        <div className='w-full relative md:w-4/6'>
           <div>
             {product?.images && product.images[slideNumber] && (
               <Image
