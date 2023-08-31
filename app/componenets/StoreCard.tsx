@@ -46,7 +46,7 @@ const StoreCard = ({ product }: StoreCardProps) => {
           <div className='flex justify-between text-white'>
             <p>{product.price && 'US$' + product.price}</p>
             <button
-              className='block text-black bg-[#44d62c] p-2 '
+              className='block text-black bg-[#44d62c] p-2 rounded-sm '
               onClick={() => addToCart(product)}
             >
               BUY

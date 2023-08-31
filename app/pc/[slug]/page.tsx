@@ -5,11 +5,13 @@ import { useEffect, useState } from 'react';
 import { getProduct } from '@/sanity/sanity-utils';
 import imageUrlBuilder from '@sanity/image-url';
 import config from '@/sanity/config/client-config';
+import { useCartStore } from '@/app/componenets/store/useCartStore';
 type Props = {
   params: { slug: string };
 };
 
 const Page = ({ params }: Props) => {
+  const { addToCart } = useCartStore();
   const [product, setProduct] = useState<Product | null>(null);
   const [slideNumber, setslideNumber] = useState(0);
   const builder = imageUrlBuilder(config);
@@ -21,10 +23,10 @@ const Page = ({ params }: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchedProducts = await getProduct(params.slug);
+        const fetchedProduct = await getProduct(params.slug);
         console.log('started');
-        setProduct(fetchedProducts);
-        console.log(fetchedProducts);
+        setProduct(fetchedProduct);
+        console.log(fetchedProduct);
         console.log('ended');
       } catch (error) {
         console.error(error);
@@ -34,9 +36,27 @@ const Page = ({ params }: Props) => {
     fetchData();
   }, []);
 
+  const addToCartFunc = () => {
+    if (product !== null) {
+      addToCart(product);
+    }
+  };
+
   return (
-    <div className='mt-16  z-10 bg-[#252525]'>
-      <p className='text-[#44d62c] mt-4 capitalize text-lg font-bold mb-2 md:hidden w-5/6 mx-auto'>
+    <div className='mt-16  z-10 bg-black relative'>
+      <div className='flex justify-between'>
+        <p className='text-[hsl(112,67%,51%)] mt-4 capitalize text-lg font-bold mb-2 '>
+          {product?.name}
+          <button
+            className='block text-black bg-[#44d62c] p-2 rounded-sm '
+            onClick={addToCartFunc}
+          >
+            BUY
+          </button>
+        </p>
+      </div>
+      sss
+      <p className='text-[#44d62c] mt-8 capitalize text-lg font-bold mb-2 md:hidden w-5/6 mx-auto'>
         {product?.name}
       </p>
       <section className='mb-12 py-4 md:flex md:w-5/6 mx-auto'>
