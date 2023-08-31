@@ -36,10 +36,10 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className='mt-16  z-10 bg-[#252525]'>
-      <p className='text-[#44d62c] capitalize text-lg font-bold mb-4 md:hidden w-5/6 mx-auto'>
+      <p className='text-[#44d62c] mt-2 capitalize text-lg font-bold mb-2 md:hidden w-5/6 mx-auto'>
         {product?.name}
       </p>
-      <section className='mb-12 md:flex md:w-5/6 mx-auto'>
+      <section className='mb-12 py-4 md:flex md:w-5/6 mx-auto'>
         <div className='w-full relative md:w-4/6'>
           <div>
             {product?.images && product.images[slideNumber] && (
@@ -56,7 +56,7 @@ const Page = ({ params }: Props) => {
               />
             )}
           </div>
-          <div className='absolute left-4 md:left-10 top-10'>
+          <div className='absolute left-4 md:left-10 top-10 md:top-8'>
             <div className='flex flex-col gap-y-2 gap-x-2 items-center'>
               {product?.images &&
                 product.images.map((img: string, index: number) => {
@@ -80,12 +80,12 @@ const Page = ({ params }: Props) => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col justify-between gap-4 mt-8'>
-          <p className='text-[#44d62c] capitalize text-lg font-bold mb-4 hidden md:block'>
+        <div className='flex flex-col justify-between gap-4 mt-8 w-5/6 mx-auto'>
+          <p className='text-[#44d62c] capitalize text-lg lg:text-xl font-bold mb-4 hidden md:block'>
             {product?.name}
           </p>
-          <p className='text-sm text-gray-300'>{product?.excerpt}</p>
-          <p className='text-lg text-white'>{product?.price}</p>
+          <p className='text-sm lg:text-md text-gray-300'>{product?.excerpt}</p>
+          <p className='text-lg lg:text-xl text-white'>USD {product?.price}</p>
         </div>
       </section>
       <section></section>
