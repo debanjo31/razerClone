@@ -36,7 +36,7 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className='mt-16  z-10 bg-[#252525]'>
-      <p className='text-[#44d62c] mt-2 capitalize text-lg font-bold mb-2 md:hidden w-5/6 mx-auto'>
+      <p className='text-[#44d62c] mt-4 capitalize text-lg font-bold mb-2 md:hidden w-5/6 mx-auto'>
         {product?.name}
       </p>
       <section className='mb-12 py-4 md:flex md:w-5/6 mx-auto'>
@@ -80,7 +80,7 @@ const Page = ({ params }: Props) => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col justify-between gap-4 mt-8 w-5/6 mx-auto'>
+        <div className='flex flex-col justify-between gap-4 mt-8 w-5/6 md:w-2/6 mx-auto'>
           <p className='text-[#44d62c] capitalize text-lg lg:text-xl font-bold mb-4 hidden md:block'>
             {product?.name}
           </p>
