@@ -88,6 +88,7 @@ const Page = ({ params }: Props) => {
           <p className='text-lg text-white'>{product?.price}</p>
         </div>
       </section>
+      <section></section>
     </div>
   );
 };
