@@ -47,13 +47,13 @@ const Page = ({ params }: Props) => {
       <div className='absolute top-0 left-0 flex justify-between'>
         <p className='text-[hsl(112,67%,51%)] mt-4 capitalize text-md md:text-lg font-bold mb-2 '>
           {product?.name}
-          <button
-            className='block text-black bg-[#44d62c] p-2 rounded-sm '
-            onClick={addToCartFunc}
-          >
-            BUY
-          </button>
         </p>
+        <button
+          className='block text-black bg-[#44d62c] p-2 rounded-sm '
+          onClick={addToCartFunc}
+        >
+          BUY
+        </button>
       </div>
       <section className='mb-12 py-4 md:flex md:w-5/6 mx-auto'>
         <div className='w-full relative md:w-4/6'>

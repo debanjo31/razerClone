@@ -31,6 +31,7 @@ const Sidebar = ({ setOpenSideBar, openSideBar }: State) => {
         <Link
           href={'/'}
           className='block py-2 mt-2'
+          onClick={() => setOpenSideBar(!openSideBar)}
         >
           <Image
             src='/img/razer-logo.svg'
