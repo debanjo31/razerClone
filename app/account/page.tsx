@@ -1,6 +1,7 @@
 import { options } from '../api/auth/[...nextauth]/options';
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
+import { signOut } from 'next-auth/react';
 
 export default async function ServerPage() {
   const session = await getServerSession(options);
@@ -10,33 +11,39 @@ export default async function ServerPage() {
   }
   const user = session?.user;
 
-
   return (
-    <section className="bg-ct-blue-600  min-h-screen pt-20">
-        <div className="max-w-4xl mx-auto bg-ct-dark-100 rounded-md h-[20rem] flex justify-center items-center">
-          <div>
-            <p className="mb-3 text-5xl text-center font-semibold">
-              Profile Page
-            </p>
-            {!user ? (
-              <p>Loading...</p>
-            ) : (
-              <div className="flex items-center gap-8">
-                <div>
-                  <img
-                    src={user.image ? user.image : "/images/default.png"}
-                    className="max-h-36"
-                    alt={`profile photo of ${user.name}`}
-                  />
-                </div>
-                <div className="mt-8">
-                  <p className="mb-3">Name: {user.name}</p>
-                  <p className="mb-3">Email: {user.email}</p>
-                </div>
+    <section className='bg-ct-blue-600  min-h-screen pt-20'>
+      <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md h-[20rem] flex justify-center items-center'>
+        <div>
+          <p className='mb-3 text-5xl text-center font-semibold'>
+            Profile Page
+          </p>
+          {!user ? (
+            <p>Loading...</p>
+          ) : (
+            <div className='flex items-center gap-8'>
+              <div>
+                <img
+                  src={user.image ? user.image : '/images/default.png'}
+                  className='max-h-36 rounded-sm'
+                  alt={`profile photo of ${user.name}`}
+                />
               </div>
-            )}
-          </div>
+              <div className='mt-8'>
+                <p className='mb-3'>Name: {user.name}</p>
+                <p className='mb-3'>Email: {user.email}</p>
+              </div>
+            </div>
+          )}
         </div>
-      </section>
+        <button
+          onClick={() =>
+            signOut({ callbackUrl: 'https://razersclone.vercel.app/store' })
+          }
+        >
+          Sign out
+        </button>
+      </div>
+    </section>
   );
 }
