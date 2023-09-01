@@ -6,7 +6,7 @@ export default async function ServerPage() {
   const session = await getServerSession(options);
 
   if (!session) {
-    redirect('/account/signin?callbackUrl=/server');
+    redirect('/account/signin?callbackUrl=/checkout');
   }
 
   return (
