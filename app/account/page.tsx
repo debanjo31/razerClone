@@ -1,7 +1,7 @@
 import { options } from '../api/auth/[...nextauth]/options';
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
-import { signOut } from 'next-auth/react';
+import Signout from './signout';
 
 export default async function ServerPage() {
   const session = await getServerSession(options);
@@ -25,7 +25,7 @@ export default async function ServerPage() {
               <div>
                 <img
                   src={user.image ? user.image : '/images/default.png'}
-                  className='max-h-36 rounded-sm'
+                  className='max-h-36'
                   alt={`profile photo of ${user.name}`}
                 />
               </div>
@@ -36,13 +36,7 @@ export default async function ServerPage() {
             </div>
           )}
         </div>
-        <button
-          onClick={() =>
-            signOut({ callbackUrl: 'https://razersclone.vercel.app/store' })
-          }
-        >
-          Sign out
-        </button>
+        <Signout />
       </div>
     </section>
   );
