@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const page = () => {
   return (
-    <main className='section h-max md:h-screen mt-16 relative bg-black'>
+    <main className='section h-max md:h-screen mt-16 relative'>
       <div className='absolute -z-10'>
         <Image
           src='/img/car.webp'

@@ -1,8 +1,9 @@
 import { options } from '../api/auth/[...nextauth]/options';
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
-import Signout from './signout';
-
+// import Signout from './signout';
+import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 export default async function ServerPage() {
   const session = await getServerSession(options);
 
@@ -36,7 +37,14 @@ export default async function ServerPage() {
             </div>
           )}
         </div>
-        <Signout />
+        {/* <Signout /> */}
+        <button>
+          <Link href={'/api/auth/signout'}
+          onClick={(e) => {
+            e.preventDefault()
+            signOut({redirect : false})
+          }}/>
+        </button>
       </div>
     </section>
   );
