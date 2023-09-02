@@ -7,11 +7,11 @@ const page = () => {
     <main className='section h-max md:h-screen'>
       <div className='absolute -z-10'>
         <Image
-          src='/img/razer-logo.svg'
+          src='/img/car.webp'
           alt=''
-          height='2000'
+          height='1000'
           width='2000'
-          className='text-transparent'
+          className='text-transparent h-full'
           loading='lazy'
         />
       </div>
