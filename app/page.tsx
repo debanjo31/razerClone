@@ -9,7 +9,7 @@ export default function Home() {
       </p>
       <section className='relative w-full flex'>
         <Link
-          href={'/education'}
+          href={'/store'}
           className=' min-h-[85vh] md:h-screen w-full'
         >
           <div className='school-bg h-full w-full bg-cover bg-center  text-center p-12 text-white'>
@@ -28,7 +28,7 @@ export default function Home() {
 
       <section className='relative w-full flex '>
         <Link
-          href={'/education'}
+          href={'/store'}
           className=' min-h-[85vh] md:h-screen w-full'
         >
           <div className='razerBlade-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -52,7 +52,7 @@ export default function Home() {
 
       <section className='relative w-full flex '>
         <Link
-          href={'/education'}
+          href={'/store'}
           className=' min-h-[85vh] md:h-screen w-full'
         >
           <div className='razerBlackWidow-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -76,7 +76,7 @@ export default function Home() {
       <div className='lg:grid lg:grid-cols-2'>
         <section className='relative w-full flex '>
           <Link
-            href={'/education'}
+            href={'/store'}
             className=' min-h-[85vh] md:h-screen w-full'
           >
             <div className='razerCobra-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -100,7 +100,7 @@ export default function Home() {
 
         <section className='relative w-full flex '>
           <Link
-            href={'/education'}
+            href={'/store'}
             className=' min-h-[85vh] md:h-screen w-full'
           >
             <div className='razerMecury-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -124,7 +124,7 @@ export default function Home() {
 
         <section className='relative w-full flex '>
           <Link
-            href={'/education'}
+            href={'/store'}
             className=' min-h-[85vh] md:h-screen w-full'
           >
             <div className='razerXanthus-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -144,7 +144,7 @@ export default function Home() {
 
         <section className='relative w-full flex '>
           <Link
-            href={'/education'}
+            href={'/store'}
             className=' min-h-[85vh] md:h-screen w-full'
           >
             <div className='razerBlackWidow-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -169,7 +169,7 @@ export default function Home() {
 
         <section className='relative w-full flex '>
           <Link
-            href={'/education'}
+            href={'/store'}
             className=' min-h-[85vh] md:h-screen w-full'
           >
             <div className='razerHonkai-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
@@ -188,7 +188,7 @@ export default function Home() {
 
         <section className='relative w-full flex '>
           <Link
-            href={'/education'}
+            href={'/store'}
             className=' min-h-[85vh] md:h-screen w-full'
           >
             <div className='razerEdge-bg h-full w-full bg-cover bg-center text-center p-12 text-white'>
