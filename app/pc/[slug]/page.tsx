@@ -6,6 +6,8 @@ import { getProduct } from '@/sanity/sanity-utils';
 import imageUrlBuilder from '@sanity/image-url';
 import config from '@/sanity/config/client-config';
 import { useCartStore } from '@/app/componenets/store/useCartStore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 type Props = {
   params: { slug: string };
 };
@@ -39,6 +41,16 @@ const Page = ({ params }: Props) => {
   const addToCartFunc = () => {
     if (product !== null) {
       addToCart(product);
+      toast.success('🦄 Added to cart', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
   };
 
@@ -105,6 +117,18 @@ const Page = ({ params }: Props) => {
         </div>
       </section>
       <section></section>
+      <ToastContainer
+        position='top-right'
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
     </div>
   );
 };
