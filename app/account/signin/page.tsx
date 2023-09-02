@@ -9,7 +9,7 @@ const page = () => {
         <Image
           src='/img/car.webp'
           alt=''
-          height='1000'
+          height='2000'
           width='2000'
           className='text-transparent '
           loading='lazy'
