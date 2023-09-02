@@ -25,8 +25,8 @@ export default async function ServerPage() {
             <div className='flex items-center gap-8'>
               <div>
                 <img
-                  src={user.image ? user.image : '/images/default.png'}
-                  className='max-h-36'
+                  src={user.image ? user.image : '/img/keyboard.png'}
+                  className='max-h-36 rounded-md'
                   alt={`profile photo of ${user.name}`}
                 />
               </div>
