@@ -56,7 +56,7 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className='mt-16  z-10 bg-black relative'>
-      <div className='fixed w-full top-[64px] bg-black left-0 flex justify-between z-20  h-16  p-2 md:px-4'>
+      <div className='fixed w-full md:w-5/6 md:mx-auto top-[64px] bg-black left-0 flex justify-between z-20  h-16  p-2 md:px-4'>
         <p className='text-[hsl(112,67%,51%)] mt-2 capitalize text-md md:text-lg font-bold mb-2  '>
           {product?.name}
         </p>
@@ -67,7 +67,7 @@ const Page = ({ params }: Props) => {
           BUY
         </button>
       </div>
-      <section className='my-12 py-4 md:flex md:w-5/6 mx-auto'>
+      <section className='my-12 mt-16 py-4 md:flex md:w-5/6 mx-auto'>
         <div className='w-full relative md:w-4/6'>
           <div>
             {product?.images && product.images[slideNumber] && (
