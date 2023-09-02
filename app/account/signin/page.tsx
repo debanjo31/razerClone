@@ -15,7 +15,7 @@ const page = () => {
           loading='lazy'
         />
       </div>
-      <div className='flex items-center justify-center pt-20'>
+      <div className='flex items-center justify-center py-20'>
         <div className='border w-full md:w-[35%]  border-black bg-black text-white p-6'>
           <h1 className='uppercase text-2xl'>Razer Login</h1>
           <div className='my-5 flex flex-col gap-y-4'>
