@@ -1,6 +1,6 @@
 import { options } from '../api/auth/[...nextauth]/options';
-import { getServerSession, signOut } from 'next-auth/next';
-
+import { getServerSession } from 'next-auth/next';
+import { signOut } from 'next-auth/react';
 // const session = await getServerSession(options);
 
 //   if (!session) {
