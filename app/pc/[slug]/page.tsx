@@ -61,7 +61,7 @@ const Page = ({ params }: Props) => {
           {product?.name}
         </p>
         <button
-          className='block text-black bg-[#44d62c] p-2 px-4 rounded-sm '
+          className='block text-black bg-[#44d62c] py-2 px-8 rounded-sm '
           onClick={addToCartFunc}
         >
           BUY
