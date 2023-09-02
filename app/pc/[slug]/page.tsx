@@ -41,7 +41,7 @@ const Page = ({ params }: Props) => {
   const addToCartFunc = () => {
     if (product !== null) {
       addToCart(product);
-      toast.success('🦄 Added to cart', {
+      toast.success('Added to cart', {
         position: 'top-right',
         autoClose: 2000,
         hideProgressBar: true,
@@ -57,11 +57,11 @@ const Page = ({ params }: Props) => {
   return (
     <div className='mt-16  z-10 bg-black relative'>
       <div className='fixed w-full top-[64px] bg-black left-0 flex justify-between z-20  h-16  p-2 md:px-4'>
-        <p className='text-[hsl(112,67%,51%)] mt-4 capitalize text-md md:text-lg font-bold mb-2 '>
+        <p className='text-[hsl(112,67%,51%)] mt-2 capitalize text-md md:text-lg font-bold mb-2  '>
           {product?.name}
         </p>
         <button
-          className='block text-black bg-[#44d62c] p-2 rounded-sm '
+          className='block text-black bg-[#44d62c] p-2 px-4 rounded-sm '
           onClick={addToCartFunc}
         >
           BUY
