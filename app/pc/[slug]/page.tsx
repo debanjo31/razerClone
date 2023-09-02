@@ -55,7 +55,7 @@ const Page = ({ params }: Props) => {
           BUY
         </button>
       </div>
-      <section className='mb-12 py-4 md:flex md:w-5/6 mx-auto'>
+      <section className='my-12 py-4 md:flex md:w-5/6 mx-auto'>
         <div className='w-full relative md:w-4/6'>
           <div>
             {product?.images && product.images[slideNumber] && (
