@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 const page = () => {
   return (
-    <main className='section h-max md:h-screen mt-16 relative'>
+    <main className='section h-max md:h-screen mt-16 relative bg-black'>
       <div className='absolute -z-10'>
         <Image
           src='/img/car.webp'
           alt=''
           height='1000'
           width='2000'
-          className='text-transparent h-full'
+          className='text-transparent '
           loading='lazy'
         />
       </div>
