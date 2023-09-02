@@ -38,12 +38,18 @@ export default async function ServerPage() {
           )}
         </div>
         {/* <Signout /> */}
-        <button>
+        {/* <button>
           <Link href={'/api/auth/signout'}
           onClick={(e) => {
             e.preventDefault()
             signOut({redirect : false})
           }}/>
+        </button> */}
+        <button
+          className=''
+          onClick={() => signOut}
+        >
+          Log out
         </button>
       </div>
     </section>
