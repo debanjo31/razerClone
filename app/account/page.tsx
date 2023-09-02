@@ -36,7 +36,7 @@ export default async function ServerPage() {
             </div>
           )}
         </div>
-        <Signout />
+        {/* <Signout /> */}
       </div>
     </section>
   );
