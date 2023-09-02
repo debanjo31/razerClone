@@ -101,7 +101,7 @@ const Page = ({ params }: Props) => {
             {product?.name}
           </p>
           <p className='text-sm lg:text-md text-gray-300'>{product?.excerpt}</p>
-          <p className='text-lg lg:text-xl text-white'>USD {product?.price}</p>
+          <p className='text-lg lg:text-xl text-white'>USD${product?.price}</p>
         </div>
       </section>
       <section></section>
