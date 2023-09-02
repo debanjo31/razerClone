@@ -1,12 +1,19 @@
 import React from 'react';
 import { LoginForm } from './form';
+import Image from 'next/image';
+
 const page = () => {
   return (
     <main className='section h-max md:h-screen'>
       <div className='absolute -z-10'>
-        {/* <img alt="" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcar.e93dc940.jpg&amp;w=2048&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcar.e93dc940.jpg&amp;w=3840&amp;q=75 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcar.e93dc940.jpg&amp;w=3840&amp;q=75"
-          width="2000" height="2000" decoding="async" data-nimg="1" className="" loading="lazy" style="color: transparent;">
-             */}
+        <Image
+          src='/img/razer-logo.svg'
+          alt=''
+          height='2000'
+          width='2000'
+          className='text-transparent'
+          loading='lazy'
+        />
       </div>
       <div className='flex items-center justify-center py-20'>
         <div className='border w-full md:w-[45%] lg:w-[35%] border-black bg-black text-white p-6'>

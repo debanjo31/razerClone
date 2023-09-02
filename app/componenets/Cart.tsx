@@ -58,14 +58,18 @@ const Cart = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  <FaBars className='inline-block mr-2' /> Orders
-                </p>
+                <Link href={'/checkout'}>
+                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                    <FaBars className='inline-block mr-2' /> Orders
+                  </p>
+                </Link>
               </Menu.Item>
               <Menu.Item>
-                <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
-                  <FaUserAlt className='inline-block mr-2' /> Account
-                </p>
+                <Link href={'/account'}>
+                  <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
+                    <FaUserAlt className='inline-block mr-2' /> Account
+                  </p>
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
@@ -73,10 +77,12 @@ const Cart = () => {
                 </p>
               </Menu.Item>
               <Menu.Item>
-                <p className='py-2  text-gray-200'>
-                  <FaRegUser className='inline-block mr-2' />
-                  Login
-                </p>
+                <Link href={'/account/signin'}>
+                  <p className='py-2  text-gray-200'>
+                    <FaRegUser className='inline-block mr-2' />
+                    Login
+                  </p>
+                </Link>
               </Menu.Item>
             </div>
           </Menu.Items>
