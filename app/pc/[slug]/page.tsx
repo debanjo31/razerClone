@@ -24,7 +24,7 @@ const Page = ({ params }: Props) => {
     const fetchData = async () => {
       try {
         // Simulate API request delay
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 400));
 
         const fetchedProduct = await getProduct(params.slug);
         console.log('started');
@@ -70,7 +70,7 @@ const Page = ({ params }: Props) => {
         <div className='flex justify-center items-center h-screen'>
           <div className='spinner'>
             <Image
-              src='./img/loading.webp'
+              src='/img/loading.webp'
               alt='loading'
               height='100'
               width='100'

@@ -35,7 +35,7 @@ const Navbar = () => {
           className='block mt-1'
         >
           <Image
-            src='./img/razer-logo.svg'
+            src='/img/razer-logo.svg'
             alt=''
             height='36'
             width='36'
