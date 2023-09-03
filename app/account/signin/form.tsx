@@ -60,42 +60,11 @@ export const LoginForm = () => {
       {error && (
         <p className='text-center bg-red-300 py-4 mb-6 rounded'>{error}</p>
       )}
-      {/* <div className='mb-6'>
-        <input
-          required
-          type='email'
-          name='email'
-          value={formValues.email}
-          onChange={handleChange}
-          placeholder='Email address'
-          className={`${input_style}`}
-        />
-      </div>
-      <div className='mb-6'>
-        <input
-          required
-          type='password'
-          name='password'
-          value={formValues.password}
-          onChange={handleChange}
-          placeholder='Password'
-          className={`${input_style}`}
-        />
-      </div>
-      <button
-        type='submit'
-        style={{ backgroundColor: `${loading ? '#ccc' : '#3446eb'}` }}
-        className='inline-block px-7 py-4 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full'
-        disabled={loading}
-      >
-        {loading ? 'loading...' : 'Sign In'}
-      </button> */}
-
       <div className='flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5'>
         <p className='text-center font-semibold mx-4 mb-0'>OR</p>
       </div>
       <a
-        className='px-7 py-2 bg-white text-black  font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center'
+        className='px-7 py-2 bg-white text-black mb-2 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center'
         onClick={() => signIn('github', { callbackUrl })}
         role='button'
       >
@@ -110,7 +79,7 @@ export const LoginForm = () => {
         Continue with GitHub
       </a>
       <a
-        className='px-7 py-2 bg-white text-black  font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3'
+        className='px-7 py-2 bg-white text-black  font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center'
         onClick={() => signIn('google', { callbackUrl })}
         role='button'
       >
