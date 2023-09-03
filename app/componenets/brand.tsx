@@ -16,15 +16,15 @@ const Brand = ({ name, words, img }: BrandProps) => {
     return builder.image(source);
   }
   return (
-    <div className='flex flex-col mb-2'>
+    <div className='flex flex-col text-center justify-center mb-2'>
       <Image
         src={urlFor(img).width(450).height(450).url()}
         alt={name}
         height='450'
         width='450'
-        className='w-24 h-24 block my-2'
+        className='w-36 h-36 block my-4'
       />
-      <p className='text-center text-white'>"{words}"</p>
+      <p className='text-center text-white font-bold my-2'>"{words}"</p>
       <p className='text-gray-500 text-sm'>{name}</p>
     </div>
   );

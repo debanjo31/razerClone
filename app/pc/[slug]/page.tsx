@@ -68,7 +68,7 @@ const Page = ({ params }: Props) => {
           BUY
         </button>
       </div>
-      <section className='my-12 mt-16 py-4 md:flex md:w-5/6 mx-auto'>
+      <section className='my-12 mt-24 py-4 md:flex md:w-5/6 mx-auto'>
         <div className='w-full relative md:w-4/6'>
           <div>
             {product?.images && product.images[slideNumber] && (
@@ -117,7 +117,7 @@ const Page = ({ params }: Props) => {
           <p className='text-lg lg:text-xl text-white'>USD${product?.price}</p>
         </div>
       </section>
-      <section className='brand grid grid-cols-1 md:grid-cols-3 justify-between'>
+      <section className='w-5/6 mx-auto brand grid grid-cols-1 md:grid-cols-3 justify-between'>
         {product?.brands &&
           product.brands.map((brand) => {
             return (
