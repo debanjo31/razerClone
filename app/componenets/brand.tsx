@@ -22,7 +22,7 @@ const Brand = ({ name, words, img }: BrandProps) => {
         alt={name}
         height='450'
         width='450'
-        className='w-36 h-36 block my-4 '
+        className='w-36 h-36 block my-4 mx-auto'
       />
       <p className='text-center text-white font-bold my-2'>"{words}"</p>
       <p className='text-gray-500 text-sm'>{name}</p>
