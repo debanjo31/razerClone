@@ -1,9 +1,13 @@
+import { Metadata } from 'next';
 import { options } from '../api/auth/[...nextauth]/options';
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
 import Signout from './signout';
-import Link from 'next/link';
-import { signOut } from 'next-auth/react';
+
+export const metadata: Metadata = {
+  title: 'Razer Authrmtication',
+  description: 'Autheticate either with Github or Google',
+};
 export default async function ServerPage() {
   const session = await getServerSession(options);
 
@@ -37,21 +41,6 @@ export default async function ServerPage() {
             </div>
           )}
         </div>
-
-        {/* <button>
-          <Link href={'/api/auth/signout'}
-          onClick={(e) => {
-            e.preventDefault()
-            signOut({redirect : false})
-          }}/>
-        </button> 
-        <button
-          className=''
-          onClick={() => signOut}
-        >
-          Log out
-        </button>
-        */}
       </div>
       <Signout />
     </section>

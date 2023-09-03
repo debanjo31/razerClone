@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <meta
           name='twitter:image'
-          content='https://razer-clone-three.vercel.app/img/razer-logo.svg'
+          content='https://razersclone.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fpptywyf1%2Fproduction%2F2a4787281d67b349c88b03b1976683ef685d9636-1500x1000.jpg%3Frect%3D250%2C0%2C1000%2C1000%26w%3D500%26h%3D500&w=640&q=75'
         />
         <meta
           name='twitter:title'
@@ -54,7 +54,7 @@ export default function RootLayout({
         />
         <meta
           name='og:image'
-          content='https://razer-clone-three.vercel.app/img/razer-logo.svg'
+          content='https://razersclone.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fpptywyf1%2Fproduction%2F2a4787281d67b349c88b03b1976683ef685d9636-1500x1000.jpg%3Frect%3D250%2C0%2C1000%2C1000%26w%3D500%26h%3D500&w=640&q=75'
         />
 
         <meta
