@@ -11,5 +11,7 @@ export interface Product {
   image: string;
   images: Array<any>;
   features: Array<any>;
+  brands?: Array<any>;
+  videos?: Array<any>;
   quantity?: number;
 }

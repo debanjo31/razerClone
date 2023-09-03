@@ -31,7 +31,9 @@ export async function getProduct(slug: string) {
         excerpt, 
       "slug": slug.current,
       "images": images[].asset._ref,
-        features[] ,   
+        features[] , 
+        brands[],
+        videos[],  
     }`,
     { slug }
   );

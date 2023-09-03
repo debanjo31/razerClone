@@ -8,6 +8,7 @@ import config from '@/sanity/config/client-config';
 import { useCartStore } from '@/app/componenets/store/useCartStore';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Brand from '@/app/componenets/brand';
 type Props = {
   params: { slug: string };
 };
@@ -116,7 +117,19 @@ const Page = ({ params }: Props) => {
           <p className='text-lg lg:text-xl text-white'>USD${product?.price}</p>
         </div>
       </section>
-      <section></section>
+      <section className='brand grid grid-cols-1 md:grid-cols-3 justify-between'>
+        {product?.brands &&
+          product.brands.map((brand) => {
+            return (
+              <Brand
+                key={brand._key}
+                name={brand.name}
+                words={brand.words}
+                img={brand.logo.asset._ref}
+              />
+            );
+          })}
+      </section>
       <ToastContainer
         position='top-right'
         autoClose={2000}
