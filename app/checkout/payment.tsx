@@ -31,13 +31,13 @@ const Paystack: React.FC = (): JSX.Element => {
     lastname: surname,
     label: name + ' ' + surname,
     amount: (amount * 100) | 0,
-    publicKey: process.env.PAYSTACK_PUBLIC_TEST_KEY as string,
+    publicKey: 'djdjdjdjdj',
     currency: 'ZAR',
   };
   const initializePayment = usePaystackPayment(config);
 
-  const onSuccess = async (reference: referenceObj) => {
-    const res = await fetch(`/api/verify/${reference.reference}`);
+  const onSuccess = async () => {
+    const res = await fetch(`/api/verify/${ref}`);
     const verifyData = await res.json();
 
     if (verifyData.data.status === 'success') {
@@ -49,7 +49,7 @@ const Paystack: React.FC = (): JSX.Element => {
     }
   };
 
-  const onClose: Function = () => {
+  const onClose: () => void = () => {
     alert('Payment cancelled.');
   };
 
