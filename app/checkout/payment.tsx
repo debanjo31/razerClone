@@ -4,7 +4,7 @@ import { PaystackButton } from 'react-paystack';
 
 
 const Paystack = () => {
-  const publicKey = process.env.PAYSTACK_ID as string;
+  const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
   const amount = 1000000;
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -37,7 +37,7 @@ const Paystack = () => {
 
   return (
     <div className='Paystack'>
-      <div className='container'>
+      <div className='container '>
         <div className='item'>
           <div className='overlay-effect'></div>
           <img
@@ -45,12 +45,12 @@ const Paystack = () => {
             src='https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80'
             alt='product'
           />
-          <div className='item-details'>
+          <div className='item-details w-5/6 mx-auto'>
             <p className='item-details__title'>Coconut Oil</p>
             <p className='item-details__amount'>NGN {amount / 100}</p>
           </div>
         </div>
-        <div className='checkout'>
+        <div className='checkout w-5/6 mx-auto'>
           <div className='checkout-form'>
             <div className='checkout-field'>
               <label>Name</label>
