@@ -13,7 +13,6 @@ export default async function ServerPage() {
   return (
     <section className='bg-black text-white md:min-h-screen py-20'>
       <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
-        <p>Checkouts</p>
         <Paystack />
       </div>
     </section>
