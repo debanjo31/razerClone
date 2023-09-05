@@ -1,3 +1,4 @@
+"use client"
 import { FormEventHandler, useEffect, useState } from 'react';
 import { usePaystackPayment } from 'react-paystack';
 import { PaystackProps } from 'react-paystack/dist/types';
