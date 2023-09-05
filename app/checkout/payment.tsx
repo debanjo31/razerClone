@@ -26,14 +26,14 @@ const Paystack: React.FC = (): JSX.Element => {
   }, [success]);
 
   const config: PaystackProps = {
-    reference: ref,
+    reference: new Date().getTime().toString(),
     email: email,
     firstname: name,
     lastname: surname,
     label: name + ' ' + surname,
     amount: (amount * 100) | 0,
-    publicKey: 'djdjdjdjdj',
-    currency: 'ZAR',
+    publicKey: process.env.PAYSTACK_ID as string,
+    currency: 'NGN',
   };
   const initializePayment = usePaystackPayment(config);
 
@@ -105,7 +105,7 @@ const Paystack: React.FC = (): JSX.Element => {
         />
       </div>
 
-      <button type='submit'>Pay R{amount | 0}</button>
+      <button type='submit'>Pay {amount | 0}</button>
     </form>
   );
 };
