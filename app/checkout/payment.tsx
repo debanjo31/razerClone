@@ -80,7 +80,7 @@ const Paystack = () => {
               />
             </div>
             <PaystackButton
-              className='paystack-button bg-white text-black'
+              className='paystack-button bg-white text-black p-2'
               {...componentProps}
             />
           </div>
