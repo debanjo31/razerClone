@@ -11,9 +11,11 @@ export default async function ServerPage() {
   }
 
   return (
-    <section className='flex flex-col gap-6 mt-16'>
-      <p>Checkouts</p>
-      <Paystack />
+    <section className='bg-black  md:min-h-screen py-20'>
+      <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
+        <p>Checkouts</p>
+        <Paystack />
+      </div>
     </section>
   );
 }
