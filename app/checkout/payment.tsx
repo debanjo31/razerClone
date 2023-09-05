@@ -1,112 +1,92 @@
 "use client"
-import { FormEventHandler, useEffect, useState } from 'react';
-import { usePaystackPayment } from 'react-paystack';
-import { PaystackProps } from 'react-paystack/dist/types';
+import React, { useState } from 'react';
+import { PaystackButton } from 'react-paystack';
+import './Paystack.css';
 
-type referenceObj = {
-  message: string;
-  reference: string;
-  status: 'sucess' | 'failure';
-  trans: string;
-  transaction: string;
-  trxref: string;
-};
-
-const Paystack: React.FC = (): JSX.Element => {
-  const [ref, setRef] = useState('');
+const Paystack = () => {
+  const publicKey = process.env.PAYSTACK_ID as string;
+  const amount = 1000000;
   const [email, setEmail] = useState('');
-  const [amount, setAmount] = useState(0);
   const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [phone, setPhone] = useState('');
 
-  useEffect(() => {
-    setSuccess(false);
-    setRef('' + Math.floor(Math.random() * 1000000000 + 1));
-  }, [success]);
-
-  const config: PaystackProps = {
-    reference: new Date().getTime().toString(),
-    email: email,
-    firstname: name,
-    lastname: surname,
-    label: name + ' ' + surname,
-    amount: (amount * 100) | 0,
-    publicKey: process.env.PAYSTACK_ID as string,
-    currency: 'NGN',
-  };
-  const initializePayment = usePaystackPayment(config);
-
-  const onSuccess = async () => {
-    const res = await fetch(`/api/verify/${ref}`);
-    const verifyData = await res.json();
-
-    if (verifyData.data.status === 'success') {
-      setSuccess(true);
-      setEmail('');
-      setAmount(0);
-      setName('');
-      setSurname('');
-    }
+  const resetForm = () => {
+    setEmail('');
+    setName('');
+    setPhone('');
   };
 
-  const onClose: () => void = () => {
-    alert('Payment cancelled.');
-  };
-
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
-    initializePayment(onSuccess, onClose);
+  const componentProps = {
+    email,
+    amount,
+    metadata: {
+      name,
+      phone,
+      custom_fields: [], // Add an empty array for custom_fields
+    },
+    publicKey,
+    text: 'Buy Now',
+    onSuccess: ({ reference }: { reference: any }) => {
+      alert(
+        `Your purchase was successful! Transaction reference: ${reference}`
+      );
+      resetForm();
+    },
+    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
   };
 
   return (
-    <form
-      id='paymentForm'
-      onSubmit={handleSubmit}
-    >
-      <div className='form-group'>
-        <label htmlFor='email'>Email Address</label>
-        <input
-          type='email'
-          id='email-address'
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+    <div className='Paystack'>
+      <div className='container'>
+        <div className='item'>
+          <div className='overlay-effect'></div>
+          <img
+            className='item-image'
+            src='https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80'
+            alt='product'
+          />
+          <div className='item-details'>
+            <p className='item-details__title'>Coconut Oil</p>
+            <p className='item-details__amount'>NGN {amount / 100}</p>
+          </div>
+        </div>
+        <div className='checkout'>
+          <div className='checkout-form'>
+            <div className='checkout-field'>
+              <label>Name</label>
+              <input
+                type='text'
+                id='name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className='checkout-field'>
+              <label>Email</label>
+              <input
+                type='text'
+                id='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className='checkout-field'>
+              <label>Phone</label>
+              <input
+                type='text'
+                id='phone'
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+            <PaystackButton
+              className='paystack-button'
+              {...componentProps}
+            />
+          </div>
+        </div>
       </div>
-      <div className='form-group'>
-        <label htmlFor='amount'>Amount</label>
-        <input
-          type='number'
-          step='0.01'
-          min={0}
-          id='amount'
-          required
-          value={amount}
-          onChange={(e) => setAmount(Number.parseFloat(e.target.value))}
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='first-name'>First Name</label>
-        <input
-          type='text'
-          id='first-name'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className='form-group'>
-        <label htmlFor='last-name'>Last Name</label>
-        <input
-          type='text'
-          id='last-name'
-          value={surname}
-          onChange={(e) => setSurname(e.target.value)}
-        />
-      </div>
-
-      <button type='submit'>Pay {amount | 0}</button>
-    </form>
+    </div>
   );
 };
 
