@@ -1,13 +1,32 @@
 "use client"
 import React, { useState } from 'react';
 import { PaystackButton } from 'react-paystack';
+import { useCartStore } from '../componenets/store/useCartStore';
+import useFromStore from '../hook/useFromStore';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
+interface PayProps {
+  name: string;
+  email: string;
+}
 
-const Paystack = () => {
+const Paystack = ({ name, email }: PayProps) => {
+  const cart = useFromStore(useCartStore, (state) => state.cart);
+  const { removeFromCart } = useCartStore();
+  let total = 0;
+  if (cart) {
+    total = cart.reduce(
+      (acc, product) => acc + product.price * (product.quantity as number),
+      0
+    );
+  }
+  const session = useSession();
+  const router = useRouter();
   const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
-  const amount = 1000000;
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
+  const amount = total;
+  const [emails, setEmail] = useState('');
+  const [names, setName] = useState('');
   const [phone, setPhone] = useState('');
 
   const resetForm = () => {
@@ -80,7 +99,7 @@ const Paystack = () => {
               />
             </div>
             <PaystackButton
-              className='paystack-button bg-white text-black p-2'
+              className='paystack-button bg-[#44d62c] text-white p-2'
               {...componentProps}
             />
           </div>

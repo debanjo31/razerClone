@@ -10,10 +10,17 @@ export default async function ServerPage() {
     redirect('/account/signin?callbackUrl=/checkout');
   }
 
+  const user = session?.user;
+
   return (
     <section className='bg-black text-white md:min-h-screen py-20'>
       <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
-        <Paystack />
+        {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
+          <Paystack
+            name={user.name}
+            email={user.email}
+          />
+        ) : null}
       </div>
     </section>
   );
