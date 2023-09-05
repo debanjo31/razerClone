@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { PaystackButton } from 'react-paystack';
-import './Paystack.css';
+
 
 const Paystack = () => {
   const publicKey = process.env.PAYSTACK_ID as string;
