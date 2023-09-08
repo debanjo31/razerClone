@@ -4,7 +4,7 @@ import { PaystackButton } from 'react-paystack';
 import { useCartStore } from '../componenets/store/useCartStore';
 import useFromStore from '../hook/useFromStore';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface PayProps {
   name: string;
@@ -49,6 +49,7 @@ const Paystack = ({ name, email }: PayProps) => {
       alert(
         `Your purchase was successful! Transaction reference: ${reference}`
       );
+      router.push('/store');
       resetForm();
     },
     onClose: () => alert("Wait! You need this oil, don't go!!!!"),

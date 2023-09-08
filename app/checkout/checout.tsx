@@ -1,19 +1,60 @@
-// pass session?.user.name and session?.user.email as props to the Paystack component
+// i want the section in checkout to show if oly there a session.user.name and mail
 //
-// Compare this snippet from app/checkout/payment.tsx:
-// import { useState } from 'react';
-// import { PaystackButton } from 'react-paystack';
-// import { useCartStore } from '../componenets/store/useCartStore';
-// import useFromStore from '../hook/useFromStore';
-// import { useSession } from 'next-auth/react';
-// import { useRouter } from 'next/router';
+// Compare this snippet from app/checkout/page.tsx:
+// import { options } from '../api/auth/[...nextauth]/options';
+// import { getServerSession } from 'next-auth/next';
+// import { redirect } from 'next/navigation';
+// import Paystack from './payment';
 //
-// const Paystack = ({ name, email }: { name: any, email:any }) => {
-//   const cart = useFromStore(useCartStore, (state) => state.cart);
-//   const { removeFromCart } = useCartStore();
-//   let total = 0;
-//   if (cart) {
-//     total = cart.reduce(
-//       (acc, product) => acc + product.price * (product.quantity as number),
-//       0
-//     );
+// export default async function ServerPage() {
+//   const session = await getServerSession(options);
+//
+//   if (!session) {
+//     redirect('/account/signin?callbackUrl=/checkout');
+//   }
+//
+//   const user = session?.user;
+//
+//   return (
+//     <section className='bg-black text-white md:min-h-screen py-20'>
+//       <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
+//         <Paystack
+//           name={user?.name}
+//           email={user?.email}
+//         />
+//       </div>
+//     </section>
+//   );
+// }
+// i want the section in checkout to show if oly there a session.user.name and mail
+//
+// Compare this snippet from app/checkout/page.tsx:
+// import { options } from '../api/auth/[...nextauth]/options';
+// import { getServerSession } from 'next-auth/next';
+// import { redirect } from 'next/navigation';
+// import Paystack from './payment';
+//
+// export default async function ServerPage() {
+//   const session = await getServerSession(options);
+//
+//   if (!session) {
+//     redirect('/account/signin?callbackUrl=/checkout');
+//   }
+//
+//   const user = session?.user;
+//
+//   return (
+//     <section className='bg-black text-white md:min-h-screen py-20'>
+//       <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
+//         <Paystack
+//           name={user?.name}
+//           email={user?.email}
+//         />
+//       </div>
+//     </section>
+//   );
+// }
+// i want the section in checkout to show if oly there a session.user.name and mail
+//
+// Compare this snippet from app/checkout/page.tsx:
+// import { options } from '../api/auth/[...nextauth]/options';
