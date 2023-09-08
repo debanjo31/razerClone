@@ -9,6 +9,7 @@ import { useCartStore } from '@/app/componenets/store/useCartStore';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Brand from '@/app/componenets/brand';
+import Video from '@/app/componenets/Video';
 type Props = {
   params: { slug: string };
 };
@@ -78,18 +79,21 @@ const Page = ({ params }: Props) => {
           </div>
         </div>
       ) : (
-        <div className='mt-16  z-10 bg-black relative'>
-          <div className='fixed w-full md:w-5/6 md:mx-auto top-[64px] bg-black left-0 flex justify-between z-20  h-16  p-2 md:px-4'>
-            <p className='text-[hsl(112,67%,51%)] mt-2 capitalize text-md md:text-lg font-bold mb-2  '>
-              {product?.name}
-            </p>
-            <button
-              className='block text-black bg-[#44d62c] py-2 px-8 rounded-sm '
-              onClick={addToCartFunc}
-            >
-              BUY
-            </button>
+        <div className='pt-16  z-10 bg-black relative'>
+          <div className='fixed w-full  top-[64px] bg-black left-0  z-20  h-16  p-2 md:px-4'>
+            <div className='md:w-5/6 md:mx-auto flex justify-between'>
+              <p className='text-[hsl(112,67%,51%)] mt-2 capitalize text-md md:text-lg font-bold mb-2  '>
+                {product?.name}
+              </p>
+              <button
+                className='block text-black bg-[#44d62c] py-2 px-8 rounded-sm '
+                onClick={addToCartFunc}
+              >
+                BUY
+              </button>
+            </div>
           </div>
+          {/* IMAGE SHOWER */}
           <section className='my-12 mt-24 py-4 md:flex md:w-5/6 mx-auto'>
             <div className='w-full relative md:w-4/6'>
               <div>
@@ -143,6 +147,7 @@ const Page = ({ params }: Props) => {
               </p>
             </div>
           </section>
+          {/* BRAND */}
           <section className='w-5/6 mx-auto brand grid grid-cols-1 md:grid-cols-3 justify-between'>
             {product?.brands &&
               product.brands.map((brand) => {
@@ -152,6 +157,18 @@ const Page = ({ params }: Props) => {
                     name={brand.name}
                     words={brand.words}
                     img={brand.logo.asset._ref}
+                  />
+                );
+              })}
+          </section>
+          {/* VIDEOS */}
+          <section className='videos'>
+            {product?.videos &&
+              product.videos.map((vid, index) => {
+                return (
+                  <Video
+                    key={index}
+                    vid={vid}
                   />
                 );
               })}
