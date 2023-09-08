@@ -6,7 +6,7 @@ const Video = ({ vid }: any) => {
       <video
         loop
         controls
-        className='object-cover w-[100%] h-48'
+        className='object-cover w-[100%] h-64'
       >
         <source
           src={vid}
