@@ -11,7 +11,7 @@ interface PayProps {
   email: string;
 }
 
-const Paystack = ({ name, email }: PayProps) => {
+const Paystack = ({ name }: PayProps) => {
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const { removeFromCart } = useCartStore();
   let total = 0;
@@ -25,7 +25,7 @@ const Paystack = ({ name, email }: PayProps) => {
   const router = useRouter();
   const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
   const amount = total;
-  const [emails, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [names, setName] = useState('');
   const [phone, setPhone] = useState('');
 
@@ -39,7 +39,7 @@ const Paystack = ({ name, email }: PayProps) => {
     email,
     amount,
     metadata: {
-      name,
+      names,
       phone,
       custom_fields: [], // Add an empty array for custom_fields
     },

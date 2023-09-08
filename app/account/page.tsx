@@ -17,7 +17,7 @@ export default async function ServerPage() {
   const user = session?.user;
 
   return (
-    <section className='bg-black  md:min-h-screen py-20'>
+    <section className='bg-black text-white  md:min-h-screen py-20'>
       <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
         <div>
           <p className='mb-3 text-5xl text-center font-semibold'>
