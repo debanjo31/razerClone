@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Video = ({ vid }: any) => {
   return (
     <div className='w-full md:w-4/6'>
