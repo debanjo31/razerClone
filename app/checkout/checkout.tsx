@@ -1,4 +1,16 @@
-const Form = () => {
+'use client';
+import React, { useState } from 'react';
+
+interface FormProps {
+  name: string;
+  email: string;
+}
+
+const Form = ({ name, email }: FormProps) => {
+  const [formMail, setFormEmail] = useState('');
+  const [formName, setFormName] = useState('');
+  setFormEmail(email);
+  setFormName(name);
   return (
     <form>
       <div>
@@ -7,6 +19,8 @@ const Form = () => {
           className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
           type='text'
           placeholder='please input your name'
+          value={formName}
+          onChange={(e) => setFormName(e.target.value)}
         />
       </div>
       <div>
@@ -15,17 +29,16 @@ const Form = () => {
           className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
           type='email'
           placeholder='please input your mail'
+          value={formMail}
+          onChange={(e) => setFormEmail(e.target.value)}
         />
       </div>
 
       <input
         type='submit'
-        value='Sign Up'
-        className='block w-full bg-white text-black mt-8 font-bold p-1 rounded-md focus:outline-none'
+        value='PAY'
+        className='block bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
       />
-      <small className='block mt-2 text-gray-500 text-center'>
-        By signing up you agree to our Terms of Use and Privacy Policy
-      </small>
     </form>
   );
 };

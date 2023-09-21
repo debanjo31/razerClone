@@ -22,7 +22,12 @@ export default async function ServerPage() {
             email={user.email}
           />
         ) : null} */}
-        <Form />
+        {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
+          <Form
+            name={user.name}
+            email={user.email}
+          />
+        ) : null}
       </div>
     </section>
   );
