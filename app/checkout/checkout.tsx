@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface FormProps {
   name: string;
@@ -9,8 +9,10 @@ interface FormProps {
 const Form = ({ name, email }: FormProps) => {
   const [formMail, setFormEmail] = useState('');
   const [formName, setFormName] = useState('');
-  setFormEmail(email);
-  setFormName(name);
+  useEffect(() => {
+    setFormEmail(email);
+    setFormName(name);
+  }, [email, name]);
   return (
     <form>
       <div>
@@ -33,7 +35,6 @@ const Form = ({ name, email }: FormProps) => {
           onChange={(e) => setFormEmail(e.target.value)}
         />
       </div>
-
       <input
         type='submit'
         value='PAY'
