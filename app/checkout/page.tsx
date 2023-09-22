@@ -4,6 +4,12 @@ import { redirect } from 'next/navigation';
 import Paystack from './payment';
 import Form from './checkout';
 import Head from 'next/head';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Razer Clone| Checkout',
+  description: 'A clone of razer website',
+};
 
 export default async function ServerPage() {
   const session = await getServerSession(options);
