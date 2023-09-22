@@ -15,7 +15,7 @@ export default async function ServerPage() {
   const user = session?.user;
 
   return (
-    <section className='bg-black text-white md:min-h-screen py-20'>
+    <>
       <Head>
         <title>Checkout</title>
         <script
@@ -23,20 +23,22 @@ export default async function ServerPage() {
           async
         ></script>
       </Head>
-      <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
-        {/* {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
+      <section className='bg-black text-white md:min-h-screen py-20'>
+        <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
+          {/* {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
           <Paystack
             name={user.name}
             email={user.email}
           />
         ) : null} */}
-        {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
-          <Form
-            name={user.name}
-            email={user.email}
-          />
-        ) : null}
-      </div>
-    </section>
+          {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
+            <Form
+              name={user.name}
+              email={user.email}
+            />
+          ) : null}
+        </div>
+      </section>
+    </>
   );
 }
