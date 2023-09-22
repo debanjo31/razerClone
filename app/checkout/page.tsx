@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
 import Paystack from './payment';
 import Form from './checkout';
+import Head from 'next/head';
 
 export default async function ServerPage() {
   const session = await getServerSession(options);
@@ -15,6 +16,13 @@ export default async function ServerPage() {
 
   return (
     <section className='bg-black text-white md:min-h-screen py-20'>
+      <Head>
+        <title>Checkout</title>
+        <script
+          src='https://maps.googleapis.com/maps/api/js?key=<AIzaSyCATImHuPcyhrO3w7jmDLa_SFYXZgK-hog>&libraries=places&callback=initMap'
+          async
+        ></script>
+      </Head>
       <div className='max-w-4xl mx-auto bg-ct-dark-100 rounded-md mb-2 flex justify-center items-center'>
         {/* {typeof user?.name === 'string' && typeof user?.email === 'string' ? (
           <Paystack

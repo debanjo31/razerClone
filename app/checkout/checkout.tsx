@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-
+import AutoComplete from './address';
 interface FormProps {
   name: string;
   email: string;
@@ -35,10 +35,14 @@ const Form = ({ name, email }: FormProps) => {
           onChange={(e) => setFormEmail(e.target.value)}
         />
       </div>
+      <div>
+        <label className='block text-sm mb-1 mt-2'>Address</label>
+        <AutoComplete />
+      </div>
       <input
         type='submit'
         value='PAY'
-        className='block bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
+        className='inline-block bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
       />
     </form>
   );
