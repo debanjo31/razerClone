@@ -50,7 +50,7 @@ const PlacesAutocomplete = ({
     <div className=''>
       <input
         value={value}
-        className=''
+        className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
         disabled={!ready}
         onChange={(e) => setValue(e.target.value)}
         placeholder='123 Stariway To Heaven'

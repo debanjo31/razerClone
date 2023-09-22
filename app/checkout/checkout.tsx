@@ -5,6 +5,7 @@ interface FormProps {
   name: string;
   email: string;
 }
+import PlacesAutocomplete from './place';
 
 const Form = ({ name, email }: FormProps) => {
   const [formMail, setFormEmail] = useState('');
@@ -38,6 +39,7 @@ const Form = ({ name, email }: FormProps) => {
       <div>
         <label className='block text-sm mb-1 mt-2'>Address</label>
         <AutoComplete />
+        <PlacesAutocomplete />
       </div>
       <div>
         <input
