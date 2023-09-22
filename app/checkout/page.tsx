@@ -19,7 +19,7 @@ export default async function ServerPage() {
       <Head>
         <title>Checkout</title>
         <script
-          src='https://maps.googleapis.com/maps/api/js?key=<AIzaSyCATImHuPcyhrO3w7jmDLa_SFYXZgK-hog>&libraries=places&callback=initMap'
+          src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCATImHuPcyhrO3w7jmDLa_SFYXZgK-hog&libraries=places&callback=initMap'
           async
         ></script>
       </Head>

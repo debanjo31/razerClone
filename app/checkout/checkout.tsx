@@ -39,11 +39,13 @@ const Form = ({ name, email }: FormProps) => {
         <label className='block text-sm mb-1 mt-2'>Address</label>
         <AutoComplete />
       </div>
-      <input
-        type='submit'
-        value='PAY'
-        className='block w-full bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
-      />
+      <div>
+        <input
+          type='submit'
+          value='PAY'
+          className='block w-full bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
+        />
+      </div>
     </form>
   );
 };
