@@ -42,7 +42,7 @@ const Form = ({ name, email }: FormProps) => {
       <input
         type='submit'
         value='PAY'
-        className='inline-block bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
+        className='block w-full bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
       />
     </form>
   );

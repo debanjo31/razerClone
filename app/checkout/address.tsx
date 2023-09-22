@@ -29,11 +29,11 @@ const AutoComplete = () => {
 
   return (
     <div>
-      <label htmlFor='address-input'>Enter address:</label>
       <input
         id='address-input'
         ref={autoCompleteRef}
         type='text'
+        className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
       />
     </div>
   );
