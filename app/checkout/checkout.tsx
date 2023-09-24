@@ -41,7 +41,14 @@ const Form = ({ name, email }: FormProps) => {
   const session = useSession();
   const router = useRouter();
   const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
-  const amount = total;
+  const shippingFee = Math.floor(Math.random() * 100);
+  let amount = 0;
+  if (devliveryOption == 'bike') {
+    amount = total + shippingFee;
+  } else {
+    amount = total;
+  }
+
   const resetForm = () => {
     setFormEmail('');
     setFormName('');
@@ -137,8 +144,8 @@ const Form = ({ name, email }: FormProps) => {
             onClick={() => setdevliveryOption('store')}
             className={
               devliveryOption === 'store'
-                ? 'block p-2 bg-white text-black w-2/6'
-                : 'bg-gray-500 text-black w-2/6'
+                ? 'block p-2 bg-white text-black w-2/6 rounded-sm'
+                : 'bg-gray-500 text-black w-2/6 rounded-sm'
             }
           >
             Store <FaStore className='h-5 w-5 inline-block' />
@@ -147,12 +154,28 @@ const Form = ({ name, email }: FormProps) => {
             onClick={() => setdevliveryOption('bike')}
             className={
               devliveryOption === 'bike'
-                ? 'block p-2 bg-white text-black w-2/6'
-                : 'bg-gray-500 text-black w-2/6'
+                ? 'block p-2 bg-white text-black w-2/6 rounded-sm'
+                : 'bg-gray-500 text-black w-2/6 rounded-sm'
             }
           >
             Delivery <FaBiking className='h-5 w-5 inline-block' />
           </button>
+        </div>
+      </div>
+      <div className='checkout mt-4'>
+        <hr className='bg-gray-500' />
+        <div className='flex justify-between'>
+          <p className='text-gray-500'>SUBTOTAL (CART)</p>
+          <p>US${total}</p>
+        </div>
+        <div className='flex justify-between'>
+          <p className='text-gray-500'>SHIPPING</p>
+          <p>{devliveryOption == 'bike' ? `US$ ${shippingFee}` : 'Free'}</p>
+        </div>
+        <hr className='bg-gray-500' />
+        <div className='flex justify-between font-bold'>
+          <p>TOTAL</p>
+          <p>US$ {amount}</p>
         </div>
       </div>
       <div>
