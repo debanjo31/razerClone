@@ -48,7 +48,6 @@ const Page = ({ params }: Props) => {
 
   const addToCartFunc = () => {
     if (product !== null) {
-      addToCart(product);
       toast.success('Added to cart', {
         position: 'top-right',
         autoClose: 2000,
@@ -59,6 +58,7 @@ const Page = ({ params }: Props) => {
         progress: undefined,
         theme: 'light',
       });
+      addToCart(product);
     }
   };
 
