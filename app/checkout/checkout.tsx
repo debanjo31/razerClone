@@ -162,20 +162,20 @@ const Form = ({ name, email }: FormProps) => {
           </button>
         </div>
       </div>
-      <div className='checkout mt-4'>
+      <div className='checkout mt-12 mb-4 text-lg'>
         <hr className='bg-gray-500' />
-        <div className='flex justify-between'>
+        <div className='flex justify-between mt-4 mb-4'>
           <p className='text-gray-500'>SUBTOTAL (CART)</p>
           <p>US${total}</p>
         </div>
-        <div className='flex justify-between'>
-          <p className='text-gray-500'>SHIPPING</p>
+        <div className='flex justify-between mb-4'>
+          <p className='text-gray-200'>SHIPPING</p>
           <p>{devliveryOption == 'bike' ? `US$ ${shippingFee}` : 'Free'}</p>
         </div>
-        <hr className='bg-gray-500' />
-        <div className='flex justify-between font-bold'>
+        <hr className='bg-gray-200' />
+        <div className='flex justify-between font-bold mt-4'>
           <p>TOTAL</p>
-          <p>US$ {amount}</p>
+          <p>US ${amount}</p>
         </div>
       </div>
       <div>
