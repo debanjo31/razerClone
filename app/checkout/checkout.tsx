@@ -165,11 +165,11 @@ const Form = ({ name, email }: FormProps) => {
       <div className='checkout mt-12 mb-4 text-lg'>
         <hr className='bg-gray-500' />
         <div className='flex justify-between mt-4 mb-4'>
-          <p className='text-gray-500'>SUBTOTAL (CART)</p>
+          <p className='text-gray-300'>SUBTOTAL (CART)</p>
           <p>US${total}</p>
         </div>
         <div className='flex justify-between mb-4'>
-          <p className='text-gray-200'>SHIPPING</p>
+          <p className='text-gray-300'>SHIPPING</p>
           <p>{devliveryOption == 'bike' ? `US$ ${shippingFee}` : 'Free'}</p>
         </div>
         <hr className='bg-gray-200' />
@@ -180,7 +180,7 @@ const Form = ({ name, email }: FormProps) => {
       </div>
       <div>
         <PaystackButton
-          className='paystack-button bg-[#44d62c] text-white p-2'
+          className='paystack-button bg-[#44d62c] text-white p-4 text-lg rounded-sm'
           {...componentProps}
         />
       </div>
