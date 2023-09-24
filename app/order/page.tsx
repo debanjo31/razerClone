@@ -24,8 +24,9 @@ const Page = () => {
         </div>
       ) : (
         <div className='bg-black text-white pb-8'>
-          <p className='font-bold'>Your Completed Orders</p>
+          
           <div className='container w-5/6 mx-auto '>
+          <p className='font-bold my-4'>Your Completed Orders</p>
             <ul>
               {order?.map((product) => (
                 <OrderItem

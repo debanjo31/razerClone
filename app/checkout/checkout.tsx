@@ -51,9 +51,9 @@ const Form = ({ name, email }: FormProps) => {
   const shippingFee = Math.floor(Math.random() * 100);
   let amount = 0;
   if (devliveryOption == 'bike') {
-    amount = Math.round((total + shippingFee) * 1000);
+    amount = Math.round((total + shippingFee));
   } else {
-    amount = Math.round(total * 1000);
+    amount = Math.round(total);
   }
   console.log(amount);
   console.log(typeof amount);
@@ -68,7 +68,7 @@ const Form = ({ name, email }: FormProps) => {
   };
   const componentProps = {
     email: formMail,
-    amount,
+    amount: amount * 100000,
     metadata: {
       formName,
       formPhone,
@@ -87,7 +87,7 @@ const Form = ({ name, email }: FormProps) => {
         progress: undefined,
         theme: 'light',
       });
-      completeOrder()
+      completeOrder();
       clearCart();
       router.push('/order');
       resetForm();

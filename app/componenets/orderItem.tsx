@@ -1,8 +1,5 @@
 import { Product } from '@/types/Product';
-import { FaTrashAlt } from 'react-icons/fa';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useCartStore } from './store/useCartStore';
 import imageUrlBuilder from '@sanity/image-url';
 import config from '../../sanity/config/client-config';
 
@@ -11,7 +8,6 @@ interface CartProps {
 }
 
 const OrderItem = ({ product }: CartProps) => {
-  const { removeFromCart, addToCart } = useCartStore();
   const builder = imageUrlBuilder(config);
 
   function urlFor(source: string) {
