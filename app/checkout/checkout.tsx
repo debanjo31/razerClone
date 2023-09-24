@@ -80,7 +80,7 @@ const Form = ({ name, email }: FormProps) => {
   };
 
   return (
-    <div className='w-full'>
+    <div className='w-5/6 mx-auto'>
       <form>
         <p className='font-bold text-lg mb-2'>1. Contact Information</p>
         <div>
@@ -137,21 +137,21 @@ const Form = ({ name, email }: FormProps) => {
             onClick={() => setdevliveryOption('store')}
             className={
               devliveryOption === 'store'
-                ? 'block p-2 bg-white text-black'
-                : 'bg-gray-500 text-black'
+                ? 'block p-2 bg-white text-black w-2/6'
+                : 'bg-gray-500 text-black w-2/6'
             }
           >
-            Store <FaStore className='h-5 w-5' />
+            Store <FaStore className='h-5 w-5 inline-block' />
           </button>
           <button
             onClick={() => setdevliveryOption('bike')}
             className={
               devliveryOption === 'bike'
-                ? 'block p-2 bg-white text-black'
-                : 'bg-gray-500 text-black'
+                ? 'block p-2 bg-white text-black w-2/6'
+                : 'bg-gray-500 text-black w-2/6'
             }
           >
-            Delivery <FaBiking className='h-5 w-5' />
+            Delivery <FaBiking className='h-5 w-5 inline-block' />
           </button>
         </div>
       </div>
