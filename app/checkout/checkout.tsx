@@ -9,6 +9,7 @@ import useFromStore from '../hook/useFromStore';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
+import { useOrderStore } from '../componenets/store/orderStore';
 
 interface FormProps {
   name: string;
@@ -19,6 +20,7 @@ const Form = ({ name, email }: FormProps) => {
   const [formName, setFormName] = useState('');
   const [formPhone, setFromPhone] = useState('');
   const [formaddress, setFormadress] = useState('');
+  const { addToOrder } = useOrderStore();
   const [devliveryOption, setdevliveryOption] = useState('bike');
 
   // const toggleTab = (tabName: string) => {
@@ -38,15 +40,20 @@ const Form = ({ name, email }: FormProps) => {
       0
     );
   }
+  const completeOrder = () => {
+   cart?.map((product) => {
+      addToOrder(product)
+   })
+  }
   const session = useSession();
   const router = useRouter();
   const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
   const shippingFee = Math.floor(Math.random() * 100);
   let amount = 0;
   if (devliveryOption == 'bike') {
-    amount = total + shippingFee;
+    amount = Math.round((total + shippingFee) * 1000);
   } else {
-    amount = total;
+    amount = Math.round(total * 1000);
   }
   console.log(amount);
   console.log(typeof amount);
@@ -80,8 +87,9 @@ const Form = ({ name, email }: FormProps) => {
         progress: undefined,
         theme: 'light',
       });
+      completeOrder()
       clearCart();
-      router.push('/store');
+      router.push('/order');
       resetForm();
     },
     onClose: () => alert('Wait! You sure you are not ready to buy these!!!!'),
@@ -94,7 +102,7 @@ const Form = ({ name, email }: FormProps) => {
         <div>
           <label className='block text-sm mb-1 mt-2'>Full Name</label>
           <input
-            className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
+            className='block w-full text-black p-2 bg-white rounded-md focus:outline-none'
             type='text'
             placeholder='please input your name'
             value={formName}
@@ -105,7 +113,7 @@ const Form = ({ name, email }: FormProps) => {
         <div>
           <label className='block text-sm mb-1 mt-2'>Email</label>
           <input
-            className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
+            className='block w-full text-black p-2 bg-white rounded-md focus:outline-none'
             type='email'
             placeholder='please input your mail'
             value={formMail}
@@ -116,7 +124,7 @@ const Form = ({ name, email }: FormProps) => {
         <div>
           <label className='block text-sm mb-1 mt-2'>Phone Nuber</label>
           <input
-            className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
+            className='block w-full text-black p-2 bg-white rounded-md focus:outline-none'
             type='number'
             placeholder='please input your phone number'
             value={formPhone}
@@ -129,7 +137,7 @@ const Form = ({ name, email }: FormProps) => {
           {/* <AutoComplete />
         <PlacesAutocomplete /> */}
           <input
-            className='block w-full text-black p-1 bg-white rounded-md focus:outline-none'
+            className='block w-full text-black p-2 bg-white rounded-md focus:outline-none'
             type='email'
             placeholder='Enter a location'
             value={formaddress}
