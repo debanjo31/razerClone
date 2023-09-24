@@ -48,7 +48,8 @@ const Form = ({ name, email }: FormProps) => {
   } else {
     amount = total;
   }
-
+  console.log(amount);
+  console.log(typeof amount);
   const resetForm = () => {
     setFormEmail('');
     setFormName('');
