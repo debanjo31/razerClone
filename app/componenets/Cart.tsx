@@ -58,7 +58,7 @@ const Cart = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={'/checkout'}>
+                <Link href={'/order'}>
                   <p className='py-2 border-b-2 border-gray-500 text-gray-200'>
                     <FaBars className='inline-block mr-2' /> Orders
                   </p>
