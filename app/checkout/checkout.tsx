@@ -1,10 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { FaStore, FaBiking } from 'react-icons/fa';
 import AutoComplete from './address';
-interface FormProps {
-  name: string;
-  email: string;
-}
 import PlacesAutocomplete from './place';
 import { PaystackButton } from 'react-paystack';
 import { useCartStore } from '../componenets/store/useCartStore';
@@ -13,11 +10,21 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 
+interface FormProps {
+  name: string;
+  email: string;
+}
 const Form = ({ name, email }: FormProps) => {
   const [formMail, setFormEmail] = useState('');
   const [formName, setFormName] = useState('');
   const [formPhone, setFromPhone] = useState('');
   const [formaddress, setFormadress] = useState('');
+  const [devliveryOption, setdevliveryOption] = useState('bike');
+
+  // const toggleTab = (tabName: string) => {
+  //   setdevliveryOption(devliveryOption === tabName ? '' : tabName);
+  // };
+
   useEffect(() => {
     setFormEmail(email);
     setFormName(name);
@@ -41,8 +48,11 @@ const Form = ({ name, email }: FormProps) => {
     setFromPhone('');
     setFormadress('');
   };
+  const clearCart = () => {
+    cart?.map((product) => removeFromCart(product));
+  };
   const componentProps = {
-    email,
+    email: formMail,
     amount,
     metadata: {
       formName,
@@ -62,16 +72,17 @@ const Form = ({ name, email }: FormProps) => {
         progress: undefined,
         theme: 'light',
       });
+      clearCart();
       router.push('/store');
       resetForm();
     },
-    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+    onClose: () => alert('Wait! You sure you are not ready to buy these!!!!'),
   };
 
   return (
-    <div>
+    <div className='w-full'>
       <form>
-        <p>1. Contact Information</p>
+        <p className='font-bold text-lg mb-2'>1. Contact Information</p>
         <div>
           <label className='block text-sm mb-1 mt-2'>Full Name</label>
           <input
@@ -120,18 +131,31 @@ const Form = ({ name, email }: FormProps) => {
         </div>
       </form>
       <div className='delivery'>
-        <p>Delivery Method</p>
+        <p className='font-bold text-lg mt-8 mb-2'>2. Delivery Method</p>
         <div className='flex gap-2'>
-          <button className='block'>Store</button>
-          <button className='block'>Delivery</button>
+          <button
+            onClick={() => setdevliveryOption('store')}
+            className={
+              devliveryOption === 'store'
+                ? 'block p-2 bg-white text-black'
+                : 'bg-gray-500 text-black'
+            }
+          >
+            Store <FaStore className='h-5 w-5' />
+          </button>
+          <button
+            onClick={() => setdevliveryOption('bike')}
+            className={
+              devliveryOption === 'bike'
+                ? 'block p-2 bg-white text-black'
+                : 'bg-gray-500 text-black'
+            }
+          >
+            Delivery <FaBiking className='h-5 w-5' />
+          </button>
         </div>
       </div>
       <div>
-        {/* <input
-          type='submit'
-          value='PAY'
-          className='block w-full bg-white text-black mt-8 font-bold px-2 py-4 rounded-md focus:outline-none'
-        /> */}
         <PaystackButton
           className='paystack-button bg-[#44d62c] text-white p-2'
           {...componentProps}
