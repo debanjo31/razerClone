@@ -7,7 +7,7 @@ interface Feature {
   description: string;
   pic: {
     asset: {
-      _ref: string | null;
+      _ref: string | undefined;
     };
   };
 }
