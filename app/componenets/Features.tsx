@@ -24,7 +24,7 @@ const Features = ({ feature }: FeaturesProps) => {
   }
 
   return (
-    <div>
+    <div className="text-white">
       <h1>{feature.title}</h1>
       <p>{feature.description}</p>
       {feature.pic.asset._ref != null && (

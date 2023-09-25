@@ -95,7 +95,7 @@ const Page = ({ params }: Props) => {
             </div>
           </div>
           {/* IMAGE SHOWER */}
-          <section className='my-12 mt-24 py-4 md:flex md:w-5/6 mx-auto'>
+          <section className='mb-12 mt-24 py-4 md:flex md:w-5/6 mx-auto'>
             <div className='w-full relative md:w-4/6'>
               <div>
                 {product?.images && product.images[slideNumber] && (
