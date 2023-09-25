@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Brand from '@/app/componenets/brand';
 import Video from '@/app/componenets/Video';
+import Features from '@/app/componenets/Features';
 type Props = {
   params: { slug: string };
 };
@@ -169,6 +170,19 @@ const Page = ({ params }: Props) => {
                   <Video
                     key={index}
                     vid={vid}
+                  />
+                );
+              })}
+          </section>
+          <section className='features'>
+            {product?.features &&
+              product.features.map((feature) => {
+                return (
+                  <Features
+                    key={feature._key}
+                    title={feature.title}
+                    description={feature.description}
+                    img={feature.pic.asset._ref}
                   />
                 );
               })}
