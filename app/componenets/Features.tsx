@@ -3,15 +3,15 @@ import Image from 'next/image';
 interface FeaturesProps {
   title: string;
   description: string;
-  img: string | null;
+  // img: string | null;
 }
 
-const Features = ({ title, description, img }: FeaturesProps) => {
+const Features = ({ title, description}: FeaturesProps) => {
   return (
     <div>
       <h1>{title}</h1>
       <p>{description}</p>
-      {img != null && (
+      {/* {img != null && (
         <Image
           src={img}
           alt={title}
@@ -19,7 +19,7 @@ const Features = ({ title, description, img }: FeaturesProps) => {
           width='450'
           className='w-36 h-36 block my-4 mx-auto'
         />
-      )}
+      )} */}
     </div>
   );
 };

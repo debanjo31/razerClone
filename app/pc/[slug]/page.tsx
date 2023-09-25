@@ -177,19 +177,19 @@ const Page = ({ params }: Props) => {
           <section className='features'>
             {product?.features &&
               product.features.map((feature) => {
-                const imgProp =
-                  feature.pic.asset._ref != undefined
-                    ? urlFor(feature.pic.asset._ref)
-                        .width(450)
-                        .height(450)
-                        .url()
-                    : null;
+                // const imgProp =
+                //   feature.pic.asset._ref != undefined
+                //     ? urlFor(feature.pic.asset._ref)
+                //         .width(450)
+                //         .height(450)
+                //         .url()
+                //     : null;
                 return (
                   <Features
                     key={feature._key}
                     title={feature.title}
                     description={feature.description}
-                    img={imgProp}
+                    // img={imgProp}
                   />
                 );
               })}
