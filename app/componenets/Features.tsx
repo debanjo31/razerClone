@@ -1,25 +1,41 @@
 import Image from 'next/image';
+import imageUrlBuilder from '@sanity/image-url';
+import config from '../../sanity/config/client-config';
 
-interface FeaturesProps {
+interface Feature {
   title: string;
   description: string;
-  // img: string | null;
+  pic: {
+    asset: {
+      _ref: string | null;
+    };
+  };
 }
 
-const Features = ({ title, description}: FeaturesProps) => {
+interface FeaturesProps {
+  feature: Feature;
+}
+
+const Features = ({ feature }: FeaturesProps) => {
+  const builder = imageUrlBuilder(config);
+
+  function urlFor(source: string) {
+    return builder.image(source);
+  }
+
   return (
     <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      {/* {img != null && (
+      <h1>{feature.title}</h1>
+      <p>{feature.description}</p>
+      {feature.pic.asset._ref != null && (
         <Image
-          src={img}
-          alt={title}
+          src={urlFor(feature.pic.asset._ref).width(450).height(450).url()}
+          alt={feature.title}
           height='450'
           width='450'
           className='w-36 h-36 block my-4 mx-auto'
         />
-      )} */}
+      )}
     </div>
   );
 };

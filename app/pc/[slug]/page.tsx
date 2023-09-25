@@ -187,9 +187,10 @@ const Page = ({ params }: Props) => {
                 return (
                   <Features
                     key={feature._key}
-                    title={feature.title}
-                    description={feature.description}
+                    // title={feature.title}
+                    // description={feature.description}
                     // img={imgProp}
+                    feature={feature}
                   />
                 );
               })}
