@@ -72,7 +72,8 @@ const Form = ({ name, email }: FormProps) => {
     metadata: {
       formName,
       formPhone,
-      custom_fields: [], // Add an empty array for custom_fields
+      custom_fields: [], 
+      // Add an empty array for custom_fields
     },
     publicKey,
     text: 'Buy Now',
@@ -188,10 +189,10 @@ const Form = ({ name, email }: FormProps) => {
         </div>
       </div>
       <div>
-        <PaystackButton
+        {/* <PaystackButton
           className='paystack-button bg-[#44d62c] text-white p-4 text-lg rounded-sm'
           {...componentProps}
-        />
+        /> */}
       </div>
     </div>
   );
