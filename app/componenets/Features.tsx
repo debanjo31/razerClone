@@ -5,7 +5,7 @@ import config from '../../sanity/config/client-config';
 interface Feature {
   title: string;
   description: string;
-  pic: {
+  pic?: {
     asset: {
       _ref: string | undefined;
     };
