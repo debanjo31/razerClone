@@ -12,6 +12,8 @@ interface Feature {
   };
 }
 
+
+
 interface FeaturesProps {
   feature: Feature;
 }
@@ -27,7 +29,7 @@ const Features = ({ feature }: FeaturesProps) => {
     <div className='text-white'>
       <h1>{feature.title}</h1>
       <p>{feature.description}</p>
-      {feature.pic.asset._ref != undefined && (
+      {feature.pic?.asset._ref != undefined && (
         <Image
           src={urlFor(feature.pic.asset._ref).width(450).height(450).url()}
           alt={feature.title}
