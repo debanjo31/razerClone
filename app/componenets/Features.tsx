@@ -6,8 +6,8 @@ interface Feature {
   title: string;
   description: string;
   pic?: {
-    asset: {
-      _ref: string | undefined;
+    asset?: {
+      _ref?: string | undefined;
     };
   };
 }
