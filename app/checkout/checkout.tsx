@@ -41,17 +41,17 @@ const Form = ({ name, email }: FormProps) => {
     );
   }
   const completeOrder = () => {
-   cart?.map((product) => {
-      addToOrder(product)
-   })
-  }
+    cart?.map((product) => {
+      addToOrder(product);
+    });
+  };
   const session = useSession();
   const router = useRouter();
   const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
   const shippingFee = Math.floor(Math.random() * 100);
   let amount = 0;
   if (devliveryOption == 'bike') {
-    amount = Math.round((total + shippingFee));
+    amount = Math.round(total + shippingFee);
   } else {
     amount = Math.round(total);
   }
@@ -66,35 +66,35 @@ const Form = ({ name, email }: FormProps) => {
   const clearCart = () => {
     cart?.map((product) => removeFromCart(product));
   };
-  const componentProps = {
-    email: formMail,
-    amount: amount * 100000,
-    metadata: {
-      formName,
-      formPhone,
-      custom_fields: [], 
-      // Add an empty array for custom_fields
-    },
-    publicKey,
-    text: 'Buy Now',
-    onSuccess: ({ reference }: { reference: any }) => {
-      toast.success('Purchased Successfully', {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
-      completeOrder();
-      clearCart();
-      router.push('/order');
-      resetForm();
-    },
-    onClose: () => alert('Wait! You sure you are not ready to buy these!!!!'),
-  };
+  // const componentProps = {
+  //   email: formMail,
+  //   amount: amount * 100000,
+  //   metadata: {
+  //     formName,
+  //     formPhone,
+  //     custom_fields: [],
+  //     // Add an empty array for custom_fields
+  //   },
+  //   publicKey,
+  //   text: 'Buy Now',
+  //   onSuccess: ({ reference }: { reference: any }) => {
+  //     toast.success('Purchased Successfully', {
+  //       position: 'top-right',
+  //       autoClose: 2000,
+  //       hideProgressBar: true,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: 'light',
+  //     });
+  //     completeOrder();
+  //     clearCart();
+  //     router.push('/order');
+  //     resetForm();
+  //   },
+  //   onClose: () => alert('Wait! You sure you are not ready to buy these!!!!'),
+  // };
 
   return (
     <div className='w-5/6 mx-auto'>
