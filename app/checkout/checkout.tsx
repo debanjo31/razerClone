@@ -66,6 +66,7 @@ const Form = ({ name, email }: FormProps) => {
   const clearCart = () => {
     cart?.map((product) => removeFromCart(product));
   };
+ 
 
   return (
     <div className='w-5/6 mx-auto'>
@@ -159,12 +160,7 @@ const Form = ({ name, email }: FormProps) => {
           <p>US ${amount}</p>
         </div>
       </div>
-      <div>
-        {/* <PaystackButton
-          className='paystack-button bg-[#44d62c] text-white p-4 text-lg rounded-sm'
-          {...componentProps}
-        /> */}
-      </div>
+      <div></div>
     </div>
   );
 };
