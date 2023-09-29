@@ -37,8 +37,8 @@ const Features = ({ feature }: FeaturesProps) => {
           <Image
             src={urlFor(feature.pic.asset._ref).width(450).height(450).url()}
             alt={feature.title}
-            fill
-            style={{ objectFit: 'cover' }}
+            height='450'
+            width='450'
             className='w-36 h-36 block my-4 mx-auto'
           />
         )}
