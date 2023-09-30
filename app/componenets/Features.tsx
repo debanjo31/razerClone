@@ -26,13 +26,15 @@ const Features = ({ feature }: FeaturesProps) => {
 
   return (
     <div className='text-white text-center'>
-      <h1 className='text-[#44d62c] text-lg mb-2'>{feature.title}</h1>
+      <h1 className='text-[#44d62c] text-lg font-bold lg:text-xl mb-2'>
+        {feature.title}
+      </h1>
       {feature.subtitle !== undefined && (
         <h3 className=''>{feature.subtitle}</h3>
       )}
 
-      <p className='text-gray-500'>{feature.description}</p>
-      <div className='w-full h-[40vh] relative'>
+      <p className='text-gray-500 mt-8'>{feature.description}</p>
+      <div className='w-full h-[40vh] md:h-[60vh] relative'>
         {feature.pic?.asset._ref !== undefined && (
           <Image
             src={urlFor(feature.pic.asset._ref).width(450).height(450).url()}
