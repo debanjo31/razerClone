@@ -66,34 +66,6 @@ const Form = ({ name, email }: FormProps) => {
   const clearCart = () => {
     cart?.map((product) => removeFromCart(product));
   };
-  const componentProps = {
-    email: formMail,
-    amount: amount * 100000,
-    metadata: {
-      formName,
-      formPhone,
-      custom_fields: [any], // Add an empty array for custom_fields
-    },
-    publicKey,
-    text: 'Buy Now',
-    onSuccess: ({ reference }: { reference: any }) => {
-      toast.success('Purchased Successfully', {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
-      completeOrder();
-      clearCart();
-      router.push('/order');
-      resetForm();
-    },
-    onClose: () => alert('Wait! You sure you are not ready to buy these!!!!'),
-  };
 
   return (
     <div className='w-5/6 mx-auto'>
@@ -187,12 +159,7 @@ const Form = ({ name, email }: FormProps) => {
           <p>US ${amount}</p>
         </div>
       </div>
-      <div>
-        <PaystackButton
-          className='paystack-button bg-[#44d62c] text-white p-4 text-lg rounded-sm'
-          {...componentProps}
-        />
-      </div>
+      <div></div>
     </div>
   );
 };
