@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import { useOrderStore } from '../componenets/store/orderStore';
 import { usePaystackPayment } from 'react-paystack';
-import Reference from '../api/verify/[reference]';
+
 
 interface FormProps {
   name: string;
@@ -46,7 +46,7 @@ const Form = ({ name, email }: FormProps) => {
   };
   const session = useSession();
   const router = useRouter();
-  const publicKey = 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf';
+
   const shippingFee = Math.floor(Math.random() * 100);
   let amount = 0;
   if (devliveryOption == 'bike') {
@@ -70,7 +70,7 @@ const Form = ({ name, email }: FormProps) => {
     reference: new Date().getTime.toString(),
     email: formMail,
     amount: amount * 100000,
-    publicKey: process.env.PAYSTACK_PUBLICKEY as string,
+    publicKey: 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf',
   };
 
   const initializePayment = usePaystackPayment(config);
