@@ -25,7 +25,7 @@ const Features = ({ feature }: FeaturesProps) => {
   }
 
   return (
-    <div className='text-white text-center mt-8'>
+    <div className='text-white text-center mt-12 '>
       <h1 className='text-[#44d62c] text-lg font-bold lg:text-xl mb-2'>
         {feature.title}
       </h1>

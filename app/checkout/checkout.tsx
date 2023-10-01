@@ -1,15 +1,14 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { FaStore, FaBiking } from 'react-icons/fa';
-import AutoComplete from './address';
-import PlacesAutocomplete from './place';
-import { PaystackButton } from 'react-paystack';
 import { useCartStore } from '../componenets/store/useCartStore';
 import useFromStore from '../hook/useFromStore';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import { useOrderStore } from '../componenets/store/orderStore';
+import { usePaystackPayment } from 'react-paystack';
+import Reference from '../api/verify/[reference]';
 
 interface FormProps {
   name: string;
@@ -67,6 +66,40 @@ const Form = ({ name, email }: FormProps) => {
     cart?.map((product) => removeFromCart(product));
   };
 
+  const config = {
+    reference: new Date().getTime.toString(),
+    email: formMail,
+    amount: amount * 100000,
+    publicKey: process.env.PAYSTACK_PUBLICKEY as string,
+  };
+
+  const initializePayment = usePaystackPayment(config);
+  const checkoutFunc = () => {
+    initializePayment(onSuccess, onClose);
+  };
+
+  const onSuccess = () => {
+    toast.success('Purchased Successfully', {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+    completeOrder();
+    clearCart();
+    router.push('/order');
+    resetForm();
+  };
+
+  const onClose = () => {
+    alert(
+      'Are you really sure you dont want to buy this amazing products now?'
+    );
+  };
   return (
     <div className='w-5/6 mx-auto'>
       <form>
@@ -106,8 +139,6 @@ const Form = ({ name, email }: FormProps) => {
         </div>
         <div>
           <label className='block text-sm mb-1 mt-2'>Address</label>
-          {/* <AutoComplete />
-        <PlacesAutocomplete /> */}
           <input
             className='block w-full text-black p-2 bg-white rounded-md focus:outline-none'
             type='email'
@@ -159,7 +190,26 @@ const Form = ({ name, email }: FormProps) => {
           <p>US ${amount}</p>
         </div>
       </div>
-      <div></div>
+      <div>
+        <button
+          className='block text-black bg-[#44d62c] py-2 px-8 rounded-sm '
+          onClick={checkoutFunc}
+        >
+          BUY
+        </button>
+      </div>
+      <ToastContainer
+        position='top-right'
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
     </div>
   );
 };
