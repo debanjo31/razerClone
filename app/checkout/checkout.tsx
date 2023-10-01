@@ -66,8 +66,10 @@ const Form = ({ name, email }: FormProps) => {
     cart?.map((product) => removeFromCart(product));
   };
 
+  let ref = new Date();
+
   const config = {
-    reference: new Date().getTime.toString(),
+    reference: ref.getTime.toString(),
     email: formMail,
     amount: amount * 100000,
     publicKey: 'pk_test_96989a80f4367bf52f418c928b2723d57ad443bf',
